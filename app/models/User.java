@@ -3,6 +3,7 @@ package models;
 import play.db.jpa.*;
 
 import javax.persistence.*;
+import java.util.*;
 
 @Entity(name = "fan_user")
 public class User extends Model {
@@ -11,9 +12,11 @@ public class User extends Model {
   public String email;
   public String phone;
 
+  @OneToMany
+  @JoinColumn(name = "id")
+  public List<EventRating> ratings;
+
   public User() {
 
   }
-
-
 }

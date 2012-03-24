@@ -13,7 +13,7 @@ public class Production extends GenericModel {
   public String title;
   @Column(name = "d_intro_est")
   public String intro;
-  @OneToMany()
+  @OneToMany
   public List<Event> events;
 
   @Column(name="d_pagetitle")

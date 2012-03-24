@@ -10,7 +10,13 @@ Welcome, ${fanUser.name}!
     <div class="no">NO${event.production.noNumber}</div>
     <div class="title">${event.production.title}</div>
     <div class="location">${event.place.title}</div>
-    <div class="ticket">&{'Pilet'}: ${event.ticketPrice}</div>
+    <div class="ticket">&{'Pilet'}: ${event.ticketPrice}€</div>
+    <div>
+      <a href="@{Application.rateProduction(event.production.id, EventRatings.LIKED}">Meeldis</a>
+      <a href="@{Application.rateProduction(event.production.id, EventRatings.DISLIKE}">Meeldis</a>
+      <a href="@{Application.rateProduction(event.production.id, EventRatings.WANT_TO_SEE}">Meeldis</a>
+
+    </div>
     <div class="info">
       #{if event.lastTime}
         &{'Viimane etendus'}
