@@ -13,10 +13,20 @@ public class User extends Model {
   public String phone;
 
   @OneToMany
-  @JoinColumn(name = "id")
-  public List<EventRating> ratings;
+  @JoinColumn(name = "user_id")
+  @MapKeyColumn(name = "web_event_id")
+  public Map<Long, EventRating> ratings;
 
   public User() {
 
+  }
+
+  public Map<Long, EventRating> getRatings() {
+    return ratings;
+  }
+
+  public EventRatings getRatingFor(Long productionId) {
+    EventRating eventRating = getRatings().get(productionId);
+    return eventRating == null ? null : eventRating.rating;
   }
 }
