@@ -21,7 +21,7 @@ body {
 	font-size: 12px;
 	color: #000000;
 	background-color: #A29694;
-	padding: 30px;
+	padding: 45px 30px;
 }
 
 a:link,
@@ -157,7 +157,6 @@ input.submit {
  */
 #wrap { width: 943px; padding: 0px 0px 0px 0px; /*background-color: #CC3366;*/ }
 
-.header { width: 950px; }
 .main { }
 .main-left { float: left; width: 330px; }
 .main-right { float: left; width: 620px; }
@@ -228,7 +227,7 @@ input.submit {
 /**
  * Menu
  */
-#menu { height: 25px; padding-bottom: 2px; margin-left: 310px; float: left; }
+#menu { height: 25px; padding-bottom: 2px; float: left; }
 #menu li { list-style: none; float: left;  border-left: 1px solid #000; padding: 0 10px; }
 #menu li#first { border-left: 0; }
 
@@ -326,6 +325,7 @@ div.kava a:visited {  border-bottom: 6px solid #000000; display: block; float: l
 .kava-item .location { width: 80px; }
 .kava-item .ticket { width: 70px; }
 .kava-item .info { width: 120px; text-wrap: normal; }
+.kava-item .data { cursor: pointer; overflow: hidden; }
 
 .kava-item .extended { background: #B2A6A4; width: 100%; overflow: hidden; display: none;}
 .kava-item .extended .left { float: left; padding: 5px 10px; }

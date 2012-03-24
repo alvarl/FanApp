@@ -1,62 +1,14 @@
 #{extends 'main.html' /}
 
-<div class="kava-item" onclick="loadKavaExtended(1);">
-    <div class="time">L 24/03 19:00</div>
-    <div class="no">NO89</div>
-    <div class="title">Vahel on tunne, et elu saab otsa ja armastust polnudki</div>
-    <div class="location">teatrisaal</div>
-    <div class="ticket">pilet: 17,13</div>
-    <div class="info">viimaseid kordi</div>
-    <div class="extended">
-        <div class="left">
-            Ma arvan et seda lavastust....
-            <br />
-            <img src="@{'/public/images/yes.png'}" /> tahaks näha<br />
-            <img src="@{'/public/images/done.png'}" /> olen näinud<br />
-            <img src="@{'/public/images/no.png'}" /> see pole minu tass teed
-        </div>
-        <div class="right">
-            Mingid muud tegevused
-        </div>
+<div class="kava-item">
+    <div class="data" onclick="toggleKavaExtended(this, 1);">
+        <div class="time">L 24/03 19:00</div>
+        <div class="no">NO89</div>
+        <div class="title">Vahel on tunne, et elu saab otsa ja armastust polnudki</div>
+        <div class="location">teatrisaal</div>
+        <div class="ticket">pilet: 17,13</div>
+        <div class="info">viimaseid kordi</div>
     </div>
-</div>
-
-<div class="kava-item">
-    <div class="time">L 24/03 19:00</div>
-    <div class="no">NO89</div>
-    <div class="title">Inimese teekond</div>
-    <div class="location">teatrisaal</div>
-    <div class="ticket">pilet: 17,13</div>
-    <div class="info">viimaseid kordi</div>
-    <div class="extended"></div>
-</div>
-
-<div class="kava-item">
-    <div class="time">L 24/03 19:00</div>
-    <div class="no">NO89</div>
-    <div class="title">Seitse samuraid</div>
-    <div class="location">teatrisaal</div>
-    <div class="ticket">pilet: 17,13</div>
-    <div class="info">viimaseid kordi</div>
-    <div class="extended"></div>
-</div>
-
-<div class="kava-item">
-    <div class="time">L 24/03 19:00</div>
-    <div class="no">NO89</div>
-    <div class="title">Vahel on tunne, et elu saab otsa ja armastust polnudki</div>
-    <div class="location">teatrisaal</div>
-    <div class="ticket">pilet: 17,13</div>
-    <div class="info">viimaseid kordi</div>
-    <div class="extended"></div>
-</div>
-
-<div class="kava-item">
-    <div class="time">L 24/03 19:00</div>
-    <div class="no">NO89</div>
-    <div class="title">Seitse samuraid</div>
-    <div class="location">teatrisaal</div>
-    <div class="ticket">pilet: 17,13</div>
-    <div class="info">viimaseid kordi</div>
-    <div class="extended"></div>
+    <div class="extended">
+    </div>
 </div>

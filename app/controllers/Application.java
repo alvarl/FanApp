@@ -19,6 +19,9 @@ public class Application extends Controller {
   public static void kava() {
     render();
   }
+   public static void kava_ext() {
+       render();
+   }
 
    public static void points() {
        render();
