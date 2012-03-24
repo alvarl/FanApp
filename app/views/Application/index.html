@@ -3,6 +3,12 @@
 
 Welcome, ${fanUser.name}!
 
+<script type="text/javascript">
+  function rateProduction(productionId, rating) {
+
+  }
+</script>
+
 #{list items:events, as:'event'}
 <div class="kava-item">
   <div class="data" onclick="toggleKavaExtended(this, 1);">
@@ -12,10 +18,9 @@ Welcome, ${fanUser.name}!
     <div class="location">${event.place.title}</div>
     <div class="ticket">&{'Pilet'}: ${event.ticketPrice}€</div>
     <div>
-      <a href="@{Application.rateProduction(event.production.id, EventRatings.LIKED}">Meeldis</a>
-      <a href="@{Application.rateProduction(event.production.id, EventRatings.DISLIKE}">Meeldis</a>
-      <a href="@{Application.rateProduction(event.production.id, EventRatings.WANT_TO_SEE}">Meeldis</a>
-
+      <a href="javascript:void(0);" onclick="rateProduction">Meeldis</a>
+      <a href="@{Application.rateProduction(event.production.id, models.EventRatings.DISLIKE)}">Pole minu maitse</a>
+      <a href="@{Application.rateProduction(event.production.id, models.EventRatings.WANT_TO_SEE)}">Soovin näha</a>
     </div>
     <div class="info">
       #{if event.lastTime}

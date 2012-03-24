@@ -12,6 +12,7 @@ public class EventRating extends Model {
   public User user;
 
   @ManyToOne(optional = false)
+  @JoinColumn(name = "web_event_id")
   Production production;
   
   @Enumerated(value = STRING)

@@ -33,7 +33,7 @@ public class Application extends Controller {
    * @param rating
    */
   public static void rateProduction(Long productionId, String rating) {
-    EventRating eventRating = EventRating.find("where production_id = ? and user_id = ?", productionId, getUser().id).first();
+    EventRating eventRating = EventRating.find("web_event_id = ? and user_id = ?", productionId, getUser().id).first();
 
     if(eventRating != null) {
       eventRating.rating = EventRatings.valueOf(rating);
