@@ -9,9 +9,16 @@ Welcome, ${fanUser.name}!
     <div class="time">${event.time.format('dd.MM.yyyy HH:mm')}</div>
     <div class="no">NO89</div>
     <div class="title">${event.production.title}</div>
-    <div class="location">/koht/</div>
-    <div class="ticket">pilet: xx,xx</div>
-    <div class="info">viimaseid kordi</div>
+    <div class="location">${event.place.title}</div>
+    <div class="ticket">pilet: ${event.ticketPrice}</div>
+    <div class="info">
+      #{if event.lastTime}
+        &{'Viimane etendus'}
+      #{/if}
+      #{elseif event.premiere}
+        &{'Esietendus!'}
+      #{/elseif}
+    </div>
   </div>
   <div class="extended">
     ${event.production.intro.raw()}

@@ -13,7 +13,20 @@ public class Event extends GenericModel {
   public String title;
   @Column(name = "d_intro_est")
   public String intro;
-  @ManyToOne() @JoinColumn(name = "event_id")
+  @ManyToOne @JoinColumn(name = "event_id")
   public Production production;
+
+  @ManyToOne @JoinColumn(name = "place_id")
+  public Place place;
+
   public Date time;
+
+  @Column(name = "lasttime")
+  public boolean lastTime;
+
+  public boolean premiere;
+
+  @Column(name = "price1")
+  public String ticketPrice;
+
 }
