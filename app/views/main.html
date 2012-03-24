@@ -10,39 +10,40 @@
   <meta charset="UTF-8" />
 
   <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/style.css'}">
-  <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/ui-lightness/jquery-ui-1.8.17.custom.css'}">
-    <link rel="stylesheet" href="@{'/public/stylesheets/handheld.css'}" media="handheld, only screen and (max-device-width:480px)"/>
   #{get 'moreStyles' /}
-  <script src="@{'/public/javascripts/jquery-1.7.1.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-  <script src="@{'/public/javascripts/jquery-ui-1.8.17.custom.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript" charset="${_response_encoding}"></script>
+  <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js" type="text/javascript" charset="${_response_encoding}"></script>
   <script src="@{'/public/javascripts/script.js'}" type="text/javascript" charset="${_response_encoding}"></script>
   #{get 'moreScripts' /}
 </head>
 
 <body>
-<div id="container">
-    <div class="main">
-        <div class="main-left">
-            <div class="banner"></div>
+<div data-role="page" id="page1">
+    <div data-theme="f" data-role="header">
+        <div>
+            <img src="http://avalik.no99.ee/PUNKT99.jpg" />
         </div>
-        <div class="main-right">
-            <ul id="menu">
-                <li id="first">
-                    <a href="/Application/kava">Kava</a>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="/Application/kava" data-theme="a" data-icon="" data-transition="slide">
+                        Kava
+                    </a>
                 </li>
                 <li>
-                    <a href="#">Toeta näitlejat</a>
+                    <a href="#page1" data-theme="c" data-icon="">
+                        Õlled / Lilled
+                    </a>
                 </li>
                 <li>
-                    <a href="/auth/logout">Logi välja</a>
+                    <a href="#page1" data-theme="c" data-icon="">
+                        Sinu konto
+                    </a>
                 </li>
             </ul>
-            <div class="points">Punkte: <a href="/Application/points">76</a></div>
-            <div class="clear"></div>
-            #{doLayout /}
         </div>
-        <div class="clear"></div>
     </div>
+    #{doLayout /}
 </div>
 </body>
 </html>
