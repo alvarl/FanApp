@@ -3,8 +3,9 @@ package models;
 import play.db.jpa.*;
 
 import javax.persistence.*;
+import java.util.*;
 
-@Entity(name = "web_event")
+@Entity(name = "web_kava")
 public class Event extends GenericModel {
   @Id @Column(name = "page_id")
   public Long id;
@@ -12,4 +13,5 @@ public class Event extends GenericModel {
   public String title;
   @Column(name = "d_intro_est")
   public String intro;
+  public Date time;
 }
