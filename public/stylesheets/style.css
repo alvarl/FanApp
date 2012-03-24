@@ -1195,7 +1195,6 @@ body.ui-mobile-viewport,
 div.ui-mobile-viewport { overflow-x: hidden; }
 
 /* "page" containers - full-screen views, one should always be in view post-pageload */
-.ui-mobile [data-role=page], .ui-mobile [data-role=dialog], .ui-page { top: 0; left: 0; width: 100%; min-height: 100%; position: absolute; display: none; border: 0; }
 .ui-mobile .ui-page-active { display: block; overflow: visible; }
 
 /* on ios4, setting focus on the page element causes flashing during transitions when there is an outline, so we turn off outlines */
@@ -1616,7 +1615,7 @@ Built by David Kaneda and maintained by Jonathan Stark.
 }
 .ui-footer-duplicate, .ui-page-fullscreen .ui-fixed-inline { display: none; }
 .ui-page-fullscreen .ui-header, .ui-page-fullscreen .ui-footer { opacity: .9; }
-.ui-navbar { overflow: hidden;  }
+.ui-navbar { overflow: hidden; border-bottom: 1px solid #B3B3B3; }
 .ui-navbar ul, .ui-navbar-expanded ul { list-style:none; padding: 0; margin: 0; position: relative; display: block; border: 0;}
 .ui-navbar-collapsed ul { float: left; width: 75%; margin-right: -2px; }
 .ui-navbar-collapsed .ui-navbar-toggle { float: left; width: 25%; }
@@ -1731,7 +1730,7 @@ Built by David Kaneda and maintained by Jonathan Stark.
 
 @media all and (min-width: 450px){
 	.ui-field-contain .ui-controlgroup-label { vertical-align: top; display: inline-block;  width: 20%;  margin: 0 2% 0 0;  }
-	.ui-field-contain .ui-controlgroup-controls { width: 60%; display: inline-block; }
+	.ui-field-contain .ui-controlgroup-controls { display: inline-block; }
 	.ui-field-contain .ui-controlgroup .ui-select { width: 100%; } 
 	.ui-field-contain .ui-controlgroup-horizontal .ui-select { width: auto; }
 }	.ui-dialog { min-height: 480px; }
