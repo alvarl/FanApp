@@ -24,6 +24,37 @@ body
 	text-align: left;
 }
 
+.logo
+{
+	width: 100%;
+	background: #a19694;
+	height: 55px;
+	text-align: center;
+	padding: 10px
+}
+
+.logo div
+{
+	font-size: 48px;
+	font-weight: bold;
+	text-shadow: none;
+	text-transform: uppercase;
+}
+
+.logo .point
+{
+    display: inline-block;
+    zoom: 1;
+    .display: inline;
+}
+
+.logo .num-cont
+{
+    display: inline-block;
+    zoom: 1;
+    .display: inline;
+}
+
 .ui-bar-a {
 	border: 1px solid 		#2A2A2A /*{a-bar-border}*/;
 	background: 			#111111 /*{a-bar-background-color}*/;
