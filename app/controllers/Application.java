@@ -18,7 +18,7 @@ public class Application extends Controller {
 
   public static void index() {
     SocialUser user = SecureSocial.getCurrentUser();
-    List<Event> events = Event.findAll();
+    List<Event> events = Event.find("time > ? and event_id != 0 order by time asc", new Date()).fetch();
     render(user, events);
   }
 

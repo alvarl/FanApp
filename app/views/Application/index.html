@@ -6,8 +6,8 @@ Welcome, ${fanUser.name}!
 <ul>
 #{list items:events, as:'event'}
     <li>
-      <h1>${event.title} (${event.time.format('dd.MM.yyyy HH:mm')})</h1>
-      <div>${event.intro}</div>
+      <h1>${event.production.title} (${event.time.format('dd.MM.yyyy HH:mm')})</h1>
+      <div>${event.production.intro.raw()}</div>
     </li>
 #{/list}
 </ul>

@@ -13,5 +13,7 @@ public class Event extends GenericModel {
   public String title;
   @Column(name = "d_intro_est")
   public String intro;
+  @ManyToOne() @JoinColumn(name = "event_id")
+  public Production production;
   public Date time;
 }
