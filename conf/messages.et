@@ -1,0 +1,31 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+application.title=Tere tulemast!
+logout=Logi %s välja
+login=Logi sisse
+loggedIn=%s on sisse logitud
+signup=Hakka kasutajaks
+secure.title=Logi sisse
+secure.notActivated=Sinu kasutajakonto on aktiveerimata.
+secure.password=Parool
+secure.confirmPassword=Parool uuesti
+secure.accountCreated=Kasutaja loodud!
+greetingAfterSignup=Meil on hea meel, et liitusid paljude teistega!
+
+validation.required=%s on kohustuslik
+validation.email=%s pole korrektne mailiaadress
+validation.object=Midagi läks viltu!
+
+since.seconds=%s sekund(it) tagasi
+since.minutes=%s minut(it) tagasi
+since.hours=%s tund(i) tagasi
+since.days=%s päev(a) tagasi
+since.months=%s kuu(d) tagasi
+since.years=%s aasta(t) tagasi
+since.format=dd.MM.yyyy
+
+calendar.dayNamesJS='Pühapäev', 'Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev'
+calendar.dayNamesShortJS='P', 'E', 'T', 'K', 'N', 'R', 'L'
+calendar.monthNamesJS='Jaanuar', 'Veebruar', 'Märts', 'Aprill', 'Mai', 'Juuni', 'Juuli', 'August', 'September', 'Oktoober', 'November', 'Detsember'
+calendar.monthNamesShortJS='Jaan', 'Veebr', 'Märts', 'Apr', 'Mai', 'Juun', 'Juul', 'Aug', 'Sept', 'Okt', 'Nov', 'Dets'

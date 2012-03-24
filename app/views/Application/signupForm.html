@@ -1,0 +1,42 @@
+#{extends 'main.html' /}
+#{set 'title'}&{'application.title'}#{/set}
+
+<div class="wide">
+#{if flash.error}
+  <span class="alert-message error">
+    &{flash.error}
+  </span>
+#{/if}
+#{if flash.success}
+  <span class="alert-message success">
+    &{flash.success}
+    <a href="@{Application.activate()}">&{'secure.activate'}</a>
+  </span>
+#{/if}
+</div>
+
+<div class="span3">
+	#{form @signup()}
+  <fieldset>
+  <div class="clearfix">
+    <label for="email">&{'secure.email'}</label>
+    <div class="input"><input type="text" name="email" id="email" value="${flash.email}" /></div>
+	</div>
+  <div class="clearfix">
+    <label for="password">&{'secure.password'}</label>
+    <div class="input"><input type="password" name="password" id="password" value="" /></div>
+  </div>
+  <div class="clearfix">
+    <label for="confirmPassword">&{'secure.confirmPassword'}</label>
+    <div class="input"><input type="password" name="confirmPassword" id="confirmPassword" value="" /></div>
+  </div>
+  <div class="clearfix">
+    <label for="realname">&{'secure.realname'}</label>
+    <div class="input"><input type="text" name="realName" id="realName" value="" /></div>
+  </div>
+  <div class="clearfix">
+    <div class="input"><input type="submit" id="register" value="&{'secure.register'}" class="btn primary"/>
+  </div>
+	#{/form}
+</div>
+

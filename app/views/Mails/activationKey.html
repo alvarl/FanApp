@@ -1,0 +1,12 @@
+<html>
+<body><h1>&{'email.activationKey.hello', user.fullName}</h1>
+
+<div>
+&{'email.activationKey.text'}
+
+<a href="@@{Application.activate(user.email, user.activationKey)}">@@{Application.activate(user.email, user.activationKey)}</a>
+</div>
+
+&{'email.activationKey.bye'}
+</body>
+</html>

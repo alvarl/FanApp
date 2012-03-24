@@ -1,0 +1,15 @@
+#{extends 'main.html' /}
+#{set 'title'}&{'application.title'}#{/set}
+
+<div id="login">
+  #{if flash.success}
+    <p class="success">
+      &{flash.success}
+    </p>
+    <a href="@{Secure.login()}">&{'login'}</a>
+  #{/if}
+  <p class="greeting">
+    &{'greetingAfterSignup'}
+  </p>
+</div>
+
