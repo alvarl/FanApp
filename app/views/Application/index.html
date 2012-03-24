@@ -3,13 +3,23 @@
 
 Welcome, ${fanUser.name}!
 
-<ul>
 #{list items:events, as:'event'}
-    <li>
-      <h1>${event.production.title} (${event.time.format('dd.MM.yyyy HH:mm')})</h1>
-      <div>${event.production.intro.raw()}</div>
-    </li>
+<div class="kava-item">
+  <div class="data" onclick="toggleKavaExtended(this, 1);">
+    <div class="time">${event.time.format('dd.MM.yyyy HH:mm')}</div>
+    <div class="no">NO89</div>
+    <div class="title">${event.production.title}</div>
+    <div class="location">/koht/</div>
+    <div class="ticket">pilet: xx,xx</div>
+    <div class="info">viimaseid kordi</div>
+  </div>
+  <div class="extended">
+    ${event.production.intro.raw()}
+  </div>
+</div>
+
 #{/list}
-</ul>
+
+
 
 
