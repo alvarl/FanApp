@@ -22,5 +22,18 @@ public class Application extends Controller {
     render(user, events);
   }
 
+  public static void kava() {
+    render();
+  }
+   public static void kava_ext() {
+       render();
+   }
 
+   public static void points() {
+       render();
+   }
+
+   public static void flowers() {
+       render();
+   }
 }

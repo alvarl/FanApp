@@ -21,6 +21,7 @@ body {
 	font-size: 12px;
 	color: #000000;
 	background-color: #A29694;
+	padding: 45px 30px;
 }
 
 a:link,
@@ -36,7 +37,8 @@ a:active {
 }
 
 img {
-	display: block;
+	/* display: block; */
+	vertical-align: middle;
 }
 
 div.clear {
@@ -155,6 +157,13 @@ input.submit {
  */
 #wrap { width: 943px; padding: 0px 0px 0px 0px; /*background-color: #CC3366;*/ }
 
+.main { }
+.main-left { float: left; width: 330px; }
+.main-right { float: left; width: 620px; }
+.banner { width: 301px; height: 401px; background: url('../images/banner.png'); }
+
+.clear { clear: both; }
+
 /**
  * Topic
  */
@@ -212,14 +221,18 @@ input.submit {
 	color: #ff0000;
 }
 
+
+.points { float: right;font-size: 16px; font-weight: bold; }
+.points a { text-decoration: underline; }
 /**
  * Menu
  */
-#menu { height: 28px; padding-bottom: 12px; }
-#menu span { display: block; float: left; padding: 0px 5px 0px 5px; }
+#menu { height: 25px; padding-bottom: 2px; float: left; }
+#menu li { list-style: none; float: left;  border-left: 1px solid #000; padding: 0 10px; }
+#menu li#first { border-left: 0; }
 
 #menu a:link,
-#menu a:visited { padding: 0px 2px 4px 2px; margin: 0px 0px 0px 0px; height: 14px; display: block; float: left; font-size: 16px; font-weight: bold; }
+#menu a:visited { margin: 0px 0px 0px 0px; display: block; font-size: 16px; font-weight: bold; }
 
 #menu a.active:link,
 #menu a.active:visited { border-bottom: 6px solid #000000; }
@@ -227,7 +240,7 @@ input.submit {
 #menu a:hover,
 #menu a:active,
 #menu a.active:hover,
-#menu a.active:active { border-bottom: 6px solid #E90707; color: #000000; }
+#menu a.active:active { border-bottom: 6px solid #E90707; color: #000000; margin-bottom: -6px; }
 
 /**
  * Submenu
@@ -303,3 +316,20 @@ div.kava a:visited {  border-bottom: 6px solid #000000; display: block; float: l
 	border-bottom:6px solid #000000;
 	width:612px;
 }
+
+.kava-item { border-bottom: 3px solid #000;padding: 7px 0; overflow: hidden; }
+.kava-item div { float: left; padding: 7px 3px; overflow: hidden; text-wrap: none; }
+.kava-item .time { width: 80px; }
+.kava-item .no { width: 40px; }
+.kava-item .title { width: 180px; font-weight: bold; text-wrap: normal; }
+.kava-item .location { width: 80px; }
+.kava-item .ticket { width: 70px; }
+.kava-item .info { width: 120px; text-wrap: normal; }
+.kava-item .data { cursor: pointer; overflow: hidden; }
+
+.kava-item .extended { background: #B2A6A4; width: 100%; overflow: hidden; display: none;}
+.kava-item .extended .left { float: left; padding: 5px 10px; }
+.kava-item .extended .right { float: right; padding: 5px 10px; }
+.kava-item .extended .left img { margin: 3px 0; }
+
+.span12 .clearfix img { float: left; margin-right: 3px; }

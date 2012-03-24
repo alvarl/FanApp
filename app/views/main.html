@@ -9,16 +9,40 @@
   <title>#{get 'title' /} - ${play.Play.configuration.get("application.name")}</title>
   <meta charset="UTF-8" />
 
-  <link rel="stylesheet" media="screen" href="http://no99.ee/css/main.css">
+  <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/style.css'}">
   <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/ui-lightness/jquery-ui-1.8.17.custom.css'}">
+    <link rel="stylesheet" href="@{'/public/stylesheets/handheld.css'}" media="handheld, only screen and (max-device-width:480px)"/>
   #{get 'moreStyles' /}
+  <script src="@{'/public/javascripts/jquery-1.7.1.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+  <script src="@{'/public/javascripts/jquery-ui-1.8.17.custom.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
   <script src="@{'/public/javascripts/script.js'}" type="text/javascript" charset="${_response_encoding}"></script>
   #{get 'moreScripts' /}
 </head>
 
 <body>
 <div id="container">
-  #{doLayout /}
+    <div class="main">
+        <div class="main-left">
+            <div class="banner"></div>
+        </div>
+        <div class="main-right">
+            <ul id="menu">
+                <li id="first">
+                    <a href="/Application/kava">Kava</a>
+                </li>
+                <li>
+                    <a href="#">Toeta näitlejat</a>
+                </li>
+                <li>
+                    <a href="/auth/logout">Logi välja</a>
+                </li>
+            </ul>
+            <div class="points">Punkte: <a href="/Application/points">76</a></div>
+            <div class="clear"></div>
+            #{doLayout /}
+        </div>
+        <div class="clear"></div>
+    </div>
 </div>
 </body>
 </html>
