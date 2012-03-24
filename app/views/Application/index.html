@@ -3,12 +3,6 @@
 
 Welcome, ${fanUser.name}!
 
-<script type="text/javascript">
-  function rateProduction(productionId, rating) {
-
-  }
-</script>
-
 #{list items:events, as:'event'}
 <div class="kava-item">
   <div class="data" onclick="toggleKavaExtended(this, 1);">
@@ -18,9 +12,10 @@ Welcome, ${fanUser.name}!
     <div class="location">${event.place.title}</div>
     <div class="ticket">&{'Pilet'}: ${event.ticketPrice}€</div>
     <div>
-      <a href="javascript:void(0);" onclick="rateProduction">Meeldis</a>
-      <a href="@{Application.rateProduction(event.production.id, models.EventRatings.DISLIKE)}">Pole minu maitse</a>
-      <a href="@{Application.rateProduction(event.production.id, models.EventRatings.WANT_TO_SEE)}">Soovin näha</a>
+      #{set rating: fanUser.getRatingFor(event.production.id)/}
+      <a class="${rating == models.EventRatings.LIKED ? 'selected' : ''}" href="@{Application.rateProduction(event.production.id, models.EventRatings.LIKED)}">Meeldis</a>
+      <a class="${rating == models.EventRatings.DISLIKE ? 'selected' : ''}" href="@{Application.rateProduction(event.production.id, models.EventRatings.DISLIKE)}">Pole minu maitse</a>
+      <a class="${rating == models.EventRatings.WANT_TO_SEE ? 'selected' : ''}" href="@{Application.rateProduction(event.production.id, models.EventRatings.WANT_TO_SEE)}">Soovin näha</a>
     </div>
     <div class="info">
       #{if event.lastTime}

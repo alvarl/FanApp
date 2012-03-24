@@ -332,4 +332,6 @@ div.kava a:visited {  border-bottom: 6px solid #000000; display: block; float: l
 .kava-item .extended .right { float: right; padding: 5px 10px; }
 .kava-item .extended .left img { margin: 3px 0; }
 
+.kava-item .selected { font-weight: bold;}
+
 .span12 .clearfix img { float: left; margin-right: 3px; }
