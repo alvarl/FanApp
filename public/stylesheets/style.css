@@ -28,9 +28,9 @@ body
 {
 	width: 100%;
 	background: #a19694;
-	height: 55px;
+	height: 45px;
 	text-align: center;
-	padding: 10px
+	padding: 15px;
 }
 
 .logo div
@@ -39,6 +39,8 @@ body
 	font-weight: bold;
 	text-shadow: none;
 	text-transform: uppercase;
+	font-family: "65HelveticaMediumxBold";
+	color: #000;
 }
 
 .logo .point
