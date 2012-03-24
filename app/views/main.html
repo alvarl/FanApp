@@ -10,12 +10,13 @@
   <link rel="stylesheet" media="screen" href="http://no99.ee/css/main.css">
   <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/ui-lightness/jquery-ui-1.8.17.custom.css'}">
   #{get 'moreStyles' /}
-  <script src="@{'/public/javascripts/scripts.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+  <script src="@{'/public/javascripts/script.js'}" type="text/javascript" charset="${_response_encoding}"></script>
   #{get 'moreScripts' /}
 </head>
 
 <body>
 <div id="container">
+  #{doLayout /}
 </div>
 </body>
 </html>

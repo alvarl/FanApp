@@ -16,10 +16,9 @@ GET     /public/                                staticDir:public
 GET     /categories/{<[0-9]+>id}                Categories.show
 
 # Import Secure routes
-*       /                                       module:secure
+*       /auth                                   module:securesocial
 
 # Catch all
 *       /{controller}                           {controller}.index
 *       /{controller}/{action}                  {controller}.{action}
 
-GET     /dynamiccategories/{name}               DynamicCategories.show
