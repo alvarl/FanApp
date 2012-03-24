@@ -13,6 +13,7 @@ CREATE  TABLE IF NOT EXISTS `fan_user` (
   `email` VARCHAR(32) NOT NULL ,
   `facebook_id` INT NULL DEFAULT NULL ,
   `phone` VARCHAR(32) NULL DEFAULT NULL ,
+  `name` VARCHAR(255) NULL DEFAULT 'Teatrihuviline' ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 
@@ -31,8 +32,8 @@ CREATE  TABLE IF NOT EXISTS `fan_user_identity` (
   CONSTRAINT `fk_user_identity_fan_user`
     FOREIGN KEY (`user_id` )
     REFERENCES `fan_user` (`id` )
-    ON DELETE SET NULL
-    ON UPDATE SET NULL)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
