@@ -1,30 +1,16 @@
 #{extends 'main.html' /}
 #{set 'title'}Tool@NO99#{/set}
 
-Welcome, ${fanUser.name}!
-
+<div data-role="content">
 #{list items:events, as:'event'}
-<div class="kava-item">
-  <div class="data" onclick="toggleKavaExtended(this, 1);">
-    <div class="time">${event.time.format('dd.MM.yyyy HH:mm')}</div>
-    <div class="no">NO89</div>
-    <div class="title">${event.production.title}</div>
-    <div class="location">${event.place.title}</div>
-    <div class="ticket">pilet: ${event.ticketPrice}</div>
-    <div class="info">
-      #{if event.lastTime}
-        &{'Viimane etendus'}
-      #{/if}
-      #{elseif event.premiere}
-        &{'Esietendus!'}
-      #{/elseif}
-    </div>
-  </div>
-  <div class="extended">
-    ${event.production.intro.raw()}
-  </div>
+    <ul data-role="listview" data-divider-theme="a" data-inset="false">
+        <li data-theme="c">
+            <a href="#page1" data-transition="slide">
+                ${event.time.format('dd.MM.yy HH:mm')} NO66 ${event.production.title}
+            </a>
+        </li>
+    </ul>
 </div>
-
 #{/list}
 
 
