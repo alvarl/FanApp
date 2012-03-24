@@ -16,6 +16,9 @@ public class Production extends GenericModel {
   @OneToMany()
   public List<Event> events;
 
+  @Column(name="d_pagetitle")
+  public String noNumber;
+
   public Production() {
   }
 

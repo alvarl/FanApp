@@ -7,10 +7,10 @@ Welcome, ${fanUser.name}!
 <div class="kava-item">
   <div class="data" onclick="toggleKavaExtended(this, 1);">
     <div class="time">${event.time.format('dd.MM.yyyy HH:mm')}</div>
-    <div class="no">NO89</div>
+    <div class="no">NO${event.production.noNumber}</div>
     <div class="title">${event.production.title}</div>
     <div class="location">${event.place.title}</div>
-    <div class="ticket">pilet: ${event.ticketPrice}</div>
+    <div class="ticket">&{'Pilet'}: ${event.ticketPrice}</div>
     <div class="info">
       #{if event.lastTime}
         &{'Viimane etendus'}
