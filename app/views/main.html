@@ -16,6 +16,10 @@
   <!-- This sexy hack will bypass Facebook API crap for G48 demo. -->
   <script type="text/javascript">if (window.location.hash == '#_=_')window.location.hash = '';</script>
   <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js" type="text/javascript" charset="${_response_encoding}"></script>
+
+  <!-- This sexy hack will enable facebook login after jQuery event binding. -->
+  <script type="text/javascript">$("a[href='/auth/facebook']").bind('click', function(event) {event.stopPropagation()})</script>
+  
   <script src="@{'/public/javascripts/script.js'}" type="text/javascript" charset="${_response_encoding}"></script>
   #{get 'moreScripts' /}
 </head>
