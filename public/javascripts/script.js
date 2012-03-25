@@ -7,3 +7,8 @@ function slideNum99()
         'top': '0'
     }, 1000);
 }
+
+function goToByScroll(id)
+{
+    $('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
+}

@@ -97,7 +97,7 @@ span.date
     padding: 10px 20px;
 }
 
-.thankYou
+.thankYou, .error
 {
     display: block;
     padding: 10px;

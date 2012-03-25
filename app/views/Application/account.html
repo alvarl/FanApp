@@ -1,0 +1,55 @@
+#{extends 'main.html' /}
+
+<div data-role="content">
+    <div data-role="fieldcontain">
+        <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>
+            </legend>
+            <input name="radiobuttons1" id="radio1" value="radio1" type="radio"/>
+            <label for="radio1" onclick="goToByScroll('points')">
+                Punktid
+            </label>
+            <input name="radiobuttons1" id="radio2" value="radio2" type="radio" />
+            <label for="radio2" onclick="goToByScroll('agreements')">
+                Nõusolekud
+            </label>
+            <input name="radiobuttons1" id="radio3" value="radio3" type="radio" />
+            <label for="radio3" onclick="goToByScroll('help')">
+                Abi
+            </label>
+        </fieldset>
+    </div>
+    <a id="points"></a>
+    <h3>Punktid</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit purus, fringilla vitae luctus non, elementum non nisl. Cras a nisi sit amet ligula luctus elementum eu quis metus. Nulla laoreet consectetur lectus, et sodales quam scelerisque et. Duis et purus eget nibh tristique luctus. Praesent pellentesque sagittis sagittis. Vivamus ultricies arcu sit amet neque tincidunt faucibus. Praesent ac metus posuere enim euismod eleifend at ultricies orci. Nam sit amet quam et sapien convallis auctor vitae ac tortor. Ut egestas egestas enim, ut posuere libero elementum non. Proin consequat, nisi vitae lacinia elementum, lorem elit semper nisi, elementum laoreet magna libero vel est. Nullam placerat iaculis nibh, vel fringilla arcu gravida nec. Morbi porta tempus magna eu pretium. Aliquam vitae neque diam.
+    </p>
+    <p>
+        Aenean velit nisi, sodales at porta vel, cursus quis nulla. Cras ornare volutpat ante, sed iaculis urna posuere in. Curabitur mollis justo at mi volutpat in condimentum tellus ultricies. Quisque mollis leo in ipsum aliquet accumsan. Phasellus commodo egestas ligula, id volutpat ipsum facilisis nec. Duis eleifend tristique elementum. Pellentesque et libero quis erat tristique aliquam nec eu sem. Donec vel sem quis massa ornare eleifend ac non elit. Mauris mattis, ante non euismod malesuada, nisl metus eleifend magna, eget malesuada urna ligula ut tellus. Morbi in turpis lectus.
+    </p>
+    <p><br><br></p>
+    <a id="agreements"></a>
+    <h3>Nõusolekud</h3>
+    <form action="@{Application.patActor()}" data-ajax="false" method="post">
+    <div data-role="fieldcontain">
+        <fieldset data-role="controlgroup" data-type="vertical">
+            <legend>
+            </legend>
+            <input name="checkbox1" id="checkbox1" type="checkbox" />
+            <label for="checkbox1">
+                Tahan e-kirju saada
+            </label>
+        </fieldset>
+    </div>
+    <input type="submit" data-theme="a" data-icon="arrow-r" data-iconpos="right" value="Salvesta"/>
+    </form>
+    <p><br><br></p>
+    <a id="help"></a>
+    <h3>Abi</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit purus, fringilla vitae luctus non, elementum non nisl. Cras a nisi sit amet ligula luctus elementum eu quis metus. Nulla laoreet consectetur lectus, et sodales quam scelerisque et. Duis et purus eget nibh tristique luctus. Praesent pellentesque sagittis sagittis. Vivamus ultricies arcu sit amet neque tincidunt faucibus. Praesent ac metus posuere enim euismod eleifend at ultricies orci. Nam sit amet quam et sapien convallis auctor vitae ac tortor. Ut egestas egestas enim, ut posuere libero elementum non. Proin consequat, nisi vitae lacinia elementum, lorem elit semper nisi, elementum laoreet magna libero vel est. Nullam placerat iaculis nibh, vel fringilla arcu gravida nec. Morbi porta tempus magna eu pretium. Aliquam vitae neque diam.
+    </p>
+    <p>
+        Aenean velit nisi, sodales at porta vel, cursus quis nulla. Cras ornare volutpat ante, sed iaculis urna posuere in. Curabitur mollis justo at mi volutpat in condimentum tellus ultricies. Quisque mollis leo in ipsum aliquet accumsan. Phasellus commodo egestas ligula, id volutpat ipsum facilisis nec. Duis eleifend tristique elementum. Pellentesque et libero quis erat tristique aliquam nec eu sem. Donec vel sem quis massa ornare eleifend ac non elit. Mauris mattis, ante non euismod malesuada, nisl metus eleifend magna, eget malesuada urna ligula ut tellus. Morbi in turpis lectus.
+    </p>
+</div>
