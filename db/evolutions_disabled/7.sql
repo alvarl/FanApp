@@ -2,7 +2,7 @@
 
 # --- !Ups
 
-alter table fan_user add offers_allowed tinyint(1) unsigned not null default=1;
+alter table fan_user add offers_allowed tinyint(1) unsigned not null default 1;
 
 # --- !Downs
 

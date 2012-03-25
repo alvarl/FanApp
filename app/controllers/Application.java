@@ -121,7 +121,8 @@ public class Application extends Controller {
   }
 
   public static void account() {
-    render();
+    User user = getUser();
+    render(user);
   }
 
   public static void support() {
@@ -148,5 +149,25 @@ public class Application extends Controller {
     actors.put(10,new Actor("Marika Vaarik"));
     actors.put(11,new Actor("Sergo Vares"));
     return actors;
+  }
+
+
+  public static void savePreferences(boolean offersAllowed) {
+    User user = getUser();
+    if (user == null) {
+      error(400,"No user");
+      return;
+    }
+
+    user.offersAllowed = offersAllowed;
+
+    try {
+      user.save();
+    } catch (Exception e) {
+      error(400,"Cannot save");
+      return;
+    }
+    flash.success("Salvestatud!");
+    account();
   }
 }

@@ -2,13 +2,13 @@
 
 <div data-role="content">
     <h3>Nõusolekud</h3>
-    <form action="@{Application.patActor()}" data-ajax="false" method="post">
+    <form action="@{Application.savePreferences()}" data-ajax="false" method="post">
         <div data-role="fieldcontain">
             <fieldset data-role="controlgroup" data-type="vertical">
                 <legend>
                 </legend>
-                <input name="checkbox1" id="checkbox1" type="checkbox" />
-                <label for="checkbox1">
+                <input name="offersAllowed" value="1" id="offersAllowed" type="checkbox" #{if fanUser.offersAllowed}checked="checked"#{/if}/>
+                <label for="offersAllowed">
                     Soovin pakkumisi
                 </label>
             </fieldset>
