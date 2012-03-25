@@ -6,7 +6,6 @@
 <head>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="google-site-verification" content="LB8-DYal9Q2CJ7xOf89LskLde_cY8PbhxEsKbSTHHdg" />
   <title>#{get 'title' /} - ${play.Play.configuration.get("application.name")}</title>
   <meta charset="UTF-8" />
 
@@ -29,7 +28,7 @@
         <div class="logo">
             <div class="point">Punkt</div>
             <div class="num-cont">
-                <div class="num99">99</div>
+                <div class="num99">${fanUser ? fanUser.points : 99}</div>
             </div>
         </div>
         <div data-role="navbar" data-iconpos="top">

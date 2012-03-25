@@ -5,7 +5,7 @@
 CREATE TABLE IF NOT EXISTS fan_event_tickets (
   id int not null auto_increment,
   web_show_id INT(11) NOT NULL COMMENT 'Link to MYISAM web_event' ,
-  tickets int not null
+  tickets int not null,
   PRIMARY KEY (id))
 ENGINE = InnoDB
 COMMENT = 'Available ticket counts for shows';
@@ -40,8 +40,9 @@ CREATE TABLE IF NOT EXISTS fan_point_transaction (
 ENGINE = InnoDB
 COMMENT = 'Fan point transactions';
 
+alter table fan_user add points int default 0;
 update fan_user set points = 0;
-alter table fan_user modify points int not null default 0;
+alter table fan_user modify points int not null;
 
 # --- !Downs
 
