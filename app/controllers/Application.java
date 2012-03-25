@@ -126,6 +126,7 @@ public class Application extends Controller {
   }
 
   public static void support() {
+
     render();
   }
 

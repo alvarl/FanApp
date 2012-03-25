@@ -3,6 +3,16 @@
  <div data-role="content">
 Toeta teatrit. Üks nupuvajutus = 1 punkt
 
-<a href="#toeta" class="nupp"></a>
+<a href="javascript:void(0)" onclick="support_theatre()" class="nupp"></a>
 
  </div>
+<script type="text/javascript">
+  function support_theatre() {
+    $.get('@{Application.supportTheatre()}',function(text,status){
+      if(status == 'success') {
+          var newPoints = parseInt($('#current-points').html()) - 1;
+            $('#current-points').hide().html(newPoints).fadeIn(1000);
+      }
+    });
+  }
+</script>

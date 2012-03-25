@@ -61,7 +61,7 @@
 
           if (typeof ticketPrice != undefined) {
             var newPoints = parseInt($('#current-points').html()) - ticketPrice;
-            $('#current-points').html(newPoints);
+            $('#current-points').hide().html(newPoints).fadeIn();
           }
         }
     });
