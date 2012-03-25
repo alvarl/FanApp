@@ -18,7 +18,7 @@ public class Application extends Controller {
   @Before
   public static void before() {
     FanUser fanUser = (FanUser)SecureSocial.getCurrentUser();
-    if(fanUser != null) renderArgs.put("fanUser", User.findById(fanUser.userId));
+    if (fanUser != null) renderArgs.put("fanUser", User.findById(fanUser.userId));
   }
 
   public static void index() {
@@ -36,9 +36,10 @@ public class Application extends Controller {
   public static void rateProduction(Long productionId, String rating) {
     EventRating eventRating = EventRating.find("web_event_id = ? and user_id = ?", productionId, getUser().id).first();
 
-    if(eventRating != null) {
+    if (eventRating != null) {
       eventRating.rating = EventRatings.valueOf(rating);
-    } else {
+    }
+    else {
       eventRating = new EventRating(getUser(), Production.<Production>findById(productionId), EventRatings.valueOf(rating));
     }
     eventRating.save();
@@ -66,21 +67,31 @@ public class Application extends Controller {
     catch (OutOfPointsException e) {
       error(Messages.get("Pole piisavalt punkte!"));
     }
+  }
 
+  public static void supportTheatre() {
+    try {
+      PointTransaction.register(getUser(), 1, Messages.get("Teatri toetamine"));
+    }
+    catch (OutOfPointsException e) {
+      error(Messages.get("Pole piisavalt punkte!"));
+    }
+    renderText("OK");
   }
 
   public static void kava() {
     render();
   }
-   public static void kava_ext() {
-       render();
-   }
 
-   public static void points() {
-       render();
-   }
+  public static void kava_ext() {
+    render();
+  }
 
-   public static void flowers() {
-       render();
-   }
+  public static void points() {
+    render();
+  }
+
+  public static void flowers() {
+    render();
+  }
 }
