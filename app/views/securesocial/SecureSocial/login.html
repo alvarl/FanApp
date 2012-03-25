@@ -14,9 +14,6 @@
 #{include 'Application/greeting.html'/}
 
 <div class="span12 columns">
-    <div class="page-header">
-        <h1>&{'securesocial.login'}</h1>
-    </div>
 
     #{if flash.error}
     <div class="alert-message block-message error">
@@ -27,7 +24,6 @@
     #{/if}
 
     <div class="clearfix">
-        <p>&{'securesocial.clickOnYourAccount'}</p>
 
         <p>
             #{list items: providers, as: 'provider'}
