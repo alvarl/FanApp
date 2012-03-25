@@ -90,6 +90,11 @@ span.date
     padding-right: 13px;
 }
 
+.span12.columns
+{
+    padding: 10px 20px;
+}
+
 .ui-bar-a {
 	border: 1px solid 		#2A2A2A /*{a-bar-border}*/;
 	background: 			#111111 /*{a-bar-background-color}*/;
@@ -135,7 +140,6 @@ span.date
 	border: 1px solid 		#2A2A2A /*{a-body-border}*/;
 	background: 			#222222 /*{a-body-background-color}*/;
 	color: 					#fff /*{a-body-color}*/;
-	 text-shadow: 0 /*{a-body-shadow-x}*/ 1px /*{a-body-shadow-y}*/ 0 /*{a-body-shadow-radius}*/ #000 /*{a-body-shadow-color}*/;
 	font-weight: normal;
 	background-image: -webkit-gradient(linear, left top, left bottom, from( #666 /*{a-body-background-start}*/), to( #222 /*{a-body-background-end}*/)); /* Saf4+, Chrome */
 	background-image: -webkit-linear-gradient(#666 /*{a-body-background-start}*/, #222 /*{a-body-background-end}*/); /* Chrome 10+, Saf5.1+ */
