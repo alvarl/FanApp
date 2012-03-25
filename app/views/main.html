@@ -34,30 +34,15 @@
                    <script type="text/javascript">$(document).ready(function(){setTimeout("slideNum99();", 3000);});</script>
                 #{/if}
             </div>
-            <div class="beta"></div>
+            <div class="beta" onclick="alert('Launched @ Garage48 2012!')"></div>
         </div>
         #{if fanUser}
         <div data-role="navbar" data-iconpos="top">
-            <ul>
-                <li>
-                    <a href="@{Application.kava()}" data-theme="c" data-icon="" class="ui-state-persist">
-                        Kava
-                    </a>
-                </li>
-                <li>
-                    <a href="@{Application.flowers()}" data-theme="c" data-icon="" class="ui-state-persist ui-btn-active">
-                        Lilled
-                    </a>
-                </li>
-                <li>
-                    <a href="@{Application.account()}" data-theme="c" data-icon="" class="ui-state-persist">
-                        Sinu konto
-                    </a>
-                </li>
-            </ul>
+          #{include './navigation.html'/}
         </div>
         #{/if}
     </div>
+
        #{if flash.contains('success')}
         <span class="thankYou">${flash.get('success')}</span>
       #{/if}
