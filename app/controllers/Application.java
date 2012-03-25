@@ -22,6 +22,10 @@ public class Application extends Controller {
   }
 
   public static void index() {
+    render();
+  }
+
+  public static void kava() {
     SocialUser user = SecureSocial.getCurrentUser();
     List<Event> events = Event.find("time > ? and event_id != 0 order by time asc", new Date()).fetch();
     render(user, events);
@@ -77,10 +81,6 @@ public class Application extends Controller {
       error(Messages.get("Pole piisavalt punkte!"));
     }
     renderText("OK");
-  }
-
-  public static void kava() {
-    render();
   }
 
   public static void kava_ext() {

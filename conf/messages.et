@@ -29,3 +29,6 @@ calendar.dayNamesJS='Pühapäev', 'Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Nel
 calendar.dayNamesShortJS='P', 'E', 'T', 'K', 'N', 'R', 'L'
 calendar.monthNamesJS='Jaanuar', 'Veebruar', 'Märts', 'Aprill', 'Mai', 'Juuni', 'Juuli', 'August', 'September', 'Oktoober', 'November', 'Detsember'
 calendar.monthNamesShortJS='Jaan', 'Veebr', 'Märts', 'Apr', 'Mai', 'Juun', 'Juul', 'Aug', 'Sept', 'Okt', 'Nov', 'Dets'
+
+securesocial.login=Sisselogimine
+securesocial.clickOnYourAccount=Kasuta sisselogimiseks oma Facebook kontot.
