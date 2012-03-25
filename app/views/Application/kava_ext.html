@@ -1,34 +1,56 @@
 #{extends 'main.html' /}
+
+#{if production}
+
 <div data-role="content">
   #{if production.imageName}
-    <div>
-        <img src="http://no99.ee/gfx/png/nimi.php?image_path=${production.imageName}" />
-    </div>
+  <div>
+    <img src="http://no99.ee/gfx/png/nimi.php?image_path=${production.imageName}"/>
+  </div>
   #{/if}
-    <div data-role="fieldcontain">
-        <fieldset data-role="controlgroup" data-type="horizontal">
-            <legend>
-            </legend>
-            <input name="checkbox3" id="checkbox3" type="checkbox" />
-            <label for="checkbox3">
-                Tahan näha
-            </label>
-            <input name="checkbox1" id="checkbox1" type="checkbox" />
-            <label for="checkbox1">
-                Nähtud
-            </label>
-        </fieldset>
-    </div>
-    <a data-role="button" data-transition="fade" data-theme="a" href="#page1" data-icon="arrow-r" data-iconpos="right">
-        Osta pilet
-    </a>
-    <h3>
-        ${production.title}
-    </h3>
-    <div id="production-details">
-      ${production.content.raw()}
-    </div>
-    <a data-role="button" data-direction="reverse" data-rel="back" data-transition="fade" data-theme="c" href="#page1" data-icon="back" data-iconpos="left">
-        Tagasi
-    </a>
+  <div data-role="fieldcontain">
+    <fieldset data-role="controlgroup" data-type="horizontal">
+      <legend>
+      </legend>
+      <input type="radio" name="rating" id="WANT_TO_SEE" value="WANT_TO_SEE" #{if fanUser.getRatingFor(production.id) == models.EventRatings.WANT_TO_SEE}checked="checked"#{/if}/>
+      <label for="WANT_TO_SEE">Tahan näha</label>
+      <input type="radio" name="rating" id="LIKED" value="LIKED" #{if fanUser.getRatingFor(production.id) == models.EventRatings.LIKED}checked="checked"#{/if}/>
+      <label for="LIKED">Meeldis</label>
+
+    </fieldset>
+  </div>
+  <a data-role="button" data-transition="fade" data-theme="a" href="#page1" data-icon="arrow-r" data-iconpos="right">
+    Osta pilet
+  </a>
+
+  <h3>
+    ${production.title}
+  </h3>
+
+  <div id="production-details">
+    ${production.content.raw()}
+  </div>
+  <a data-role="button" data-direction="reverse" data-rel="back" data-transition="fade" data-theme="c" href="#page1" data-icon="back" data-iconpos="left">
+    Tagasi
+  </a>
 </div>
+
+<script type="text/javascript">
+
+
+  function rateProduction(productionId, rating) {
+    $.get('@{Application.rateProduction()}', {productionId: productionId, rating: rating}, function(html,sd,jq) {
+    });
+  }
+
+  $(function() {
+    $('input[name="rating"]').change(function() {
+      var rating = $(this).val();
+      rateProduction(${production.id}, rating);
+      return false;
+    });
+  });
+
+</script>
+
+#{/if}

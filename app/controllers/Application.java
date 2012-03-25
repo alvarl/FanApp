@@ -73,12 +73,16 @@ public class Application extends Controller {
     try {
       Actor a = createActors().get(actorId);
       Reward r = rewards.get(rewardId);
-      try {
-        ActorPatting.register(getUser(), r.points, Messages.get("Saaja") + ": " + a.name + " / " + Messages.get("Teade") + ": " + description);
-        flash.success("Aitäh! ...hea meel");
-      }
-      catch (OutOfPointsException e) {
-        flash.error("Pole piisavalt punkte!");
+      if(a == null || r == null) {
+        flash.error("Palun täida kõik väljad");
+      } else {
+        try {
+          ActorPatting.register(getUser(), r.points, Messages.get("Saaja") + ": " + a.name + " / " + Messages.get("Teade") + ": " + description);
+          flash.success("Aitäh! ...hea meel");
+        }
+        catch (OutOfPointsException e) {
+          flash.error("Pole piisavalt punkte!");
+        }
       }
     }
     catch (Exception e) {
