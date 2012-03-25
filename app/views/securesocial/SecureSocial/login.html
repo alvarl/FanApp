@@ -36,7 +36,7 @@
                         <a href="javascript:openid('${provider.type}')">                        
                     #{/if}
                     #{else}
-                        <a href="@{securesocial.SecureSocial.authenticate(provider.type.toString().toLowerCase())}">
+                        <a href="javascript:void(0);" onclick="location.href = '@{securesocial.SecureSocial.authenticate(provider.type.toString().toLowerCase())}'">
                     #{/else}
                     <img src="@{'/public/images/providers/'}/${provider.type.toString().toLowerCase()}.png" title="${provider.type}"/></a>
                 #{/if}
