@@ -55,8 +55,11 @@ public class Event extends GenericModel {
     return isBlank(title) ? production.getTitle() : title;
   }
 
+    public Production getProduction() {
+        return production;
+    }
 
-  public Integer getTicketPrice() {
+    public Integer getTicketPrice() {
     try {
       return new BigDecimal(ticketPrice).intValue();
     } catch (NumberFormatException e) {
