@@ -24,10 +24,6 @@ public class EventTickets extends Model {
 
   private static EventTickets getTicketCounter(Event event) {
     EventTickets eventTickets = find("web_show_id = ?", event.id).first();
-    if(eventTickets == null) {
-      eventTickets = new EventTickets(event, 10);
-      eventTickets.save();
-    }
     return eventTickets;
   }
 

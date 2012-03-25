@@ -8,20 +8,34 @@
     <img src="http://no99.ee/gfx/png/nimi.php?image_path=${production.imageName}"/>
   </div>
   #{/if}
-  <a data-role="button" data-transition="fade" data-theme="a" href="#page1" data-icon="arrow-r" data-iconpos="right">
-    Osta pilet
-  </a>
-    <div data-role="fieldcontain">
-        <fieldset data-role="controlgroup" data-type="horizontal" class="buttons2">
-            <legend>
-            </legend>
-            <input type="radio" name="rating" id="WANT_TO_SEE" value="WANT_TO_SEE" #{if fanUser.getRatingFor(production.id) == models.EventRatings.WANT_TO_SEE}checked="checked"#{/if}/>
-            <label for="WANT_TO_SEE">Tahan näha</label>
-            <input type="radio" name="rating" id="LIKED" value="LIKED" #{if fanUser.getRatingFor(production.id) == models.EventRatings.LIKED}checked="checked"#{/if}/>
-            <label for="LIKED">Meeldis</label>
+  <div data-role="fieldcontain">
+    <fieldset data-role="controlgroup" data-type="horizontal">
+      <legend>
+      </legend>
+      <input type="radio" name="rating" id="WANT_TO_SEE" value="WANT_TO_SEE" #{if fanUser.getRatingFor(production.id) == models.EventRatings.WANT_TO_SEE}checked="checked"#{/if}/>
+      <label for="WANT_TO_SEE">Tahan näha</label>
+      <input type="radio" name="rating" id="LIKED" value="LIKED" #{if fanUser.getRatingFor(production.id) == models.EventRatings.LIKED}checked="checked"#{/if}/>
+      <label for="LIKED">Meeldis</label>
 
-        </fieldset>
-    </div>
+    </fieldset>
+  </div>
+
+  #{set ticket: fanUser.getTicketFor(event.id) /}
+  #{if !ticket}
+    #{if event.getTicketPrice() != null && fanUser.points > event.getTicketPrice()}
+      <a id="buyTicket" data-role="button" data-transition="fade" data-theme="a" href="javascript:void(0)" onclick="buyTicket(${event.id})" data-icon="arrow-r" data-iconpos="right">
+        Osta pilet (${event.getTicketPrice()} punkti)
+      </a>
+    #{/if}
+    #{else}
+      <span data-role="button">Pilet maksab ${event.getTicketPrice()} punkti. Sul ei ole piisavalt punkte!</span>
+    #{/else}
+  #{/if}
+
+
+  <div id="yourTicket">
+    #{include './ticket.html'/}
+  </div>
 
   <h3>
     ${production.title}
@@ -33,10 +47,21 @@
   <a data-role="button" data-direction="reverse" data-rel="back" data-transition="fade" data-theme="c" href="#page1" data-icon="back" data-iconpos="left">
     Tagasi
   </a>
+
 </div>
 
 <script type="text/javascript">
-
+  function buyTicket(eventId) {
+    $.post('@{Application.buyTicket()}', { eventId: eventId },
+      function(html, st, jq){
+        if("success" == st) {
+          console.debug(html);
+          $('#yourTicket').html(html);
+          console.debug('set html');
+          $('#buyTicket').hide();
+        }
+    });
+   }
 
   function rateProduction(productionId, rating) {
     $.get('@{Application.rateProduction()}', {productionId: productionId, rating: rating}, function(html,sd,jq) {
