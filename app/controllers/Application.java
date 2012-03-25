@@ -15,10 +15,9 @@ public class Application extends Controller {
   public static Map<Integer,Reward> rewards = new HashMap<Integer, Reward>();
 
   static {
-    rewards.put(1, new Reward("Üks lill", 5));
-    rewards.put(2, new Reward("Uhke lillekimp", 15));
-    rewards.put(3, new Reward("Üks õlu", 5));
-    rewards.put(4, new Reward("Korralik pudel konjakit", 15));
+    rewards.put(1, new Reward("Väike lill", 5));
+    rewards.put(2, new Reward("Keskmine lill", 10));
+    rewards.put(3, new Reward("Suur lill", 15));
   }
 
 
