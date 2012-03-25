@@ -10,5 +10,5 @@ function slideNum99()
 
 function goToByScroll(id)
 {
-    $('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
+    $("html:not(:animated),body:not(:animated)").animate({scrollTop: $("#"+id).offset().top},'slow');
 }
