@@ -17,5 +17,8 @@ public class Place extends GenericModel{
   public Place() {
   }
 
+  public String toDisplayString() {
+    return title;
+  }
 
 }

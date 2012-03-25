@@ -2,6 +2,7 @@ package controllers;
 
 import controllers.securesocial.*;
 import models.*;
+import play.i18n.*;
 import play.mvc.*;
 import securesocial.provider.*;
 
@@ -17,7 +18,7 @@ public class Application extends Controller {
   @Before
   public static void before() {
     FanUser fanUser = (FanUser)SecureSocial.getCurrentUser();
-    if(fanUser != null) renderArgs.put("fanUser", User.findById(fanUser.userId));
+    if (fanUser != null) renderArgs.put("fanUser", User.findById(fanUser.userId));
   }
 
   public static void index() {
@@ -35,27 +36,62 @@ public class Application extends Controller {
   public static void rateProduction(Long productionId, String rating) {
     EventRating eventRating = EventRating.find("web_event_id = ? and user_id = ?", productionId, getUser().id).first();
 
-    if(eventRating != null) {
+    if (eventRating != null) {
       eventRating.rating = EventRatings.valueOf(rating);
-    } else {
+    }
+    else {
       eventRating = new EventRating(getUser(), Production.<Production>findById(productionId), EventRatings.valueOf(rating));
     }
     eventRating.save();
     renderText("");
   }
 
+  public static void buyTicket(Long eventId, Integer count) {
+    Event event = Event.findById(eventId);
+    try {
+      TicketPurchase.register(event, getUser(), count == null ? 1 : count);
+    }
+    catch (OutOfTicketsException e) {
+      error(Messages.get("Pole piisavalt pileteid!"));
+    }
+    catch (OutOfPointsException e) {
+      error(Messages.get("Pole piisavalt punkte!"));
+    }
+    renderText("");
+  }
+
+  public static void patActor(int points, String actor, String description) {
+    try {
+      ActorPatting.register(getUser(), points, description + " [" + Messages.get("Saaja") + ": " + actor + "]");
+    }
+    catch (OutOfPointsException e) {
+      error(Messages.get("Pole piisavalt punkte!"));
+    }
+  }
+
+  public static void supportTheatre() {
+    try {
+      PointTransaction.register(getUser(), 1, Messages.get("Teatri toetamine"));
+    }
+    catch (OutOfPointsException e) {
+      error(Messages.get("Pole piisavalt punkte!"));
+    }
+    renderText("OK");
+  }
+
   public static void kava() {
     render();
   }
-   public static void kava_ext() {
-       render();
-   }
 
-   public static void points() {
-       render();
-   }
+  public static void kava_ext() {
+    render();
+  }
 
-   public static void flowers() {
-       render();
-   }
+  public static void points() {
+    render();
+  }
+
+  public static void flowers() {
+    render();
+  }
 }
