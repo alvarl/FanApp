@@ -28,7 +28,11 @@
         <div class="logo">
             <div class="point">Punkt</div>
             <div class="num-cont">
-                <div class="num99">${fanUser ? fanUser.points : 99}</div>
+                <div class="num99">99</div>
+                #{if fanUser}
+                   <div class="num-user">${fanUser.points}</div>
+                   <script type="text/javascript">$(document).ready(function(){setTimeout("slideNum99();", 1000);});</script>
+                #{/if}
             </div>
         </div>
         <div data-role="navbar" data-iconpos="top">
