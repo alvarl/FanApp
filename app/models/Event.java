@@ -3,7 +3,10 @@ package models;
 import play.db.jpa.*;
 
 import javax.persistence.*;
+import java.text.*;
 import java.util.*;
+
+import static org.apache.commons.lang.StringUtils.*;
 
 @Entity(name = "web_kava")
 public class Event extends GenericModel {
@@ -29,4 +32,25 @@ public class Event extends GenericModel {
   @Column(name = "price1")
   public String ticketPrice;
 
+  public int getRemainingFanTickets() {
+    return EventTickets.getCountForEvent(this);
+  }
+
+  @Override
+  public String toString() {
+    return "Event[" +
+      "title='" + title + "'" +
+      ", production=" + production.title +
+      ", place=" + place +
+      ", time=" + time +
+      "]";
+  }
+
+  public String toDisplayString() {
+    return getNiceTitle() + " " + place.toDisplayString() + " " + new SimpleDateFormat("dd.MM.yyyy HH:mm").format(time);
+  }
+
+  public String getNiceTitle() {
+    return isBlank(title) ? production.title : title;
+  }
 }

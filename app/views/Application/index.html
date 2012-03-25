@@ -6,7 +6,8 @@
         #{list items:events, as:'event'}
         <li data-theme="c">
             <a href="/Application/kava_ext" data-transition="slide">
-                ${event.time.format('dd.MM.yy HH:mm')} NO66 ${event.production.title}
+              #{set tickets: event.remainingFanTickets /}
+              ${event.time.format('dd.MM.yy HH:mm')} ${event.production.noNumber} ${event.niceTitle} #{if tickets > 0}(${tickets} &{'fännipiletit'})#{/if}
             </a>
         </li>
         #{/list}

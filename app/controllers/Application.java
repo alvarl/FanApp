@@ -2,6 +2,7 @@ package controllers;
 
 import controllers.securesocial.*;
 import models.*;
+import play.i18n.*;
 import play.mvc.*;
 import securesocial.provider.*;
 
@@ -41,6 +42,20 @@ public class Application extends Controller {
       eventRating = new EventRating(getUser(), Production.<Production>findById(productionId), EventRatings.valueOf(rating));
     }
     eventRating.save();
+    renderText("");
+  }
+
+  public static void buyTicket(Long eventId) {
+    Event event = Event.findById(eventId);
+    try {
+      TicketPurchase.register(event, getUser(), 1);
+    }
+    catch (OutOfTicketsException e) {
+      error(Messages.get("Pole piisavalt pileteid!"));
+    }
+    catch (OutOfPointsException e) {
+      error(Messages.get("Pole piisavalt punkte!"));
+    }
     renderText("");
   }
 

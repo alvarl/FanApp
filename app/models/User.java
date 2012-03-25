@@ -11,6 +11,11 @@ public class User extends Model {
   public String name;
   public String email;
   public String phone;
+  public int points;
+
+  @OneToMany
+  @JoinColumn(name = "user_id")
+  public List<TicketPurchase> ticketPurchases;
 
   @OneToMany
   @JoinColumn(name = "user_id")
