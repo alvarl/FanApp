@@ -6,9 +6,6 @@
           Siit saab saata lemmiknäitlejale lilli koos tervitussõnumiga. Laval tuuakse näitlejale elegantsed kunstlilled, Sinu ostetud punktide eest makstakse näitlejale aga preemiat. Kui lilled on saadetud hiljemalt 15 minutit enne etenduse lõppu, antakse lilled üle etenduse lõppedes. Kui hiljem, siis järgmise etenduse lõppedes.
     </div>
     <div data-role="fieldcontain">
-      <label for="selectmenu2">
-        Kellele saadad lilled:
-      </label>
       <select data-native-menu="false" name="actorId" required=true id="selectmenu2" data-theme="c">
         <option>-- Vali näitleja --</option>
         #{list items:actors, as: 'actor'}
@@ -37,10 +34,11 @@
         <label for="textarea1">
           Sõnum näitlejale:
         </label>
-        <textarea id="textarea1" maxlength="500" name="description" placeholder="Kirjuta siia, mis sulle etenduse/näitleja juures meeldis">
-        </textarea>
+        <textarea id="textarea1" maxlength="500" name="description" placeholder="Kirjuta siia, mis sulle etenduse/näitleja juures meeldis"></textarea>
       </fieldset>
     </div>
-    <input type="submit" data-theme="a" data-icon="arrow-r" data-iconpos="right" value="Saadan"/>
+    <input type="submit" data-theme="a" data-icon="arrow-r" data-iconpos="right" value="Saada"/>
+      <hr class="button-sep">
+      <a data-role="button" data-theme="c" href="@{Application.support()}">Toeta teatrit</a>
   </div>
 </form>

@@ -15,12 +15,12 @@
       <a id="buyTicket" data-role="button" data-transition="fade" data-theme="a" href="javascript:void(0)" onclick="buyTicket(${event.id}, ${event.getTicketPrice()})" data-icon="arrow-r" data-iconpos="right">
         Osta pilet (${event.getTicketPrice()} punkti)
       </a>
+      <span class="date">&nbsp;${event.time.format('dd.MM.yy HH:mm')}</span>
     #{/if}
     #{else}
       <span data-role="button">Pilet maksab ${event.getTicketPrice()} punkti. Sul ei ole piisavalt punkte!</span>
     #{/else}
   #{/if}
-    <span class="date">&nbsp;${event.time.format('dd.MM.yy HH:mm')}</span>
     <div data-role="fieldcontain">
         <fieldset data-role="controlgroup" data-type="horizontal">
             <legend>

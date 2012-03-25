@@ -79,7 +79,7 @@ public class Application extends Controller {
       } else {
         try {
           ActorPatting.register(getUser(), r.points, Messages.get("Saaja") + ": " + a.name + " / " + Messages.get("Teade") + ": " + description);
-          flash.success("Aitäh! ...hea meel");
+          flash.success("Suur aitäh, lilled on saadetud!");
         }
         catch (OutOfPointsException e) {
           flash.error("Pole piisavalt punkte!");
