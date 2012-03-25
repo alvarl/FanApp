@@ -59,6 +59,16 @@ public class Application extends Controller {
     renderText("");
   }
 
+  public static void patActor(int points, String actor, String description) {
+    try {
+      ActorPatting.register(getUser(), points, description + " [" + Messages.get("Saaja") + ": " + actor + "]");
+    }
+    catch (OutOfPointsException e) {
+      error(Messages.get("Pole piisavalt punkte!"));
+    }
+
+  }
+
   public static void kava() {
     render();
   }

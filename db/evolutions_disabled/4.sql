@@ -47,3 +47,4 @@ alter table fan_user modify points int not null default 0;
 
 DROP TABLE IF EXISTS fan_event_tickets;
 DROP TABLE IF EXISTS fan_ticket_purchase;
+alter table fan_user drop column points;
