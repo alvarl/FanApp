@@ -19,6 +19,12 @@ public class Production extends GenericModel {
   @Column(name="d_pagetitle")
   public String noNumber;
 
+  @Column(name="photo")
+  public String imageName;
+
+  @Column(name="d_content_est")
+  public String content;
+
   public Production() {
   }
 

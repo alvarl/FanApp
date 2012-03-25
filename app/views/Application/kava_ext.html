@@ -1,8 +1,10 @@
 #{extends 'main.html' /}
 <div data-role="content">
+  #{if production.imageName}
     <div>
-        <img src="http://no99.ee/gfx/png/nimi.php?t1=NO73&amp;image_path=849_NO73_web.jpg" class="kava-img" />
+        <img src="http://no99.ee/gfx/png/nimi.php?image_path=${production.imageName}" />
     </div>
+  #{/if}
     <div data-role="fieldcontain">
         <fieldset data-role="controlgroup" data-type="horizontal">
             <legend>
@@ -21,53 +23,10 @@
         Osta pilet
     </a>
     <h3>
-        Iphigéneia Aulises
+        ${production.title}
     </h3>
     <div>
-        <p>
-            Euripides
-        </p>
-        <p>
-            Lavastaja Lorna Marshall:
-            <br />
-            <br />
-            Perekond, rahvuslik au ja sõda, mida peetakse kõrgete põhimõtete nimel. Aga mis juhtub, kui sõja vajadused nõuavad lapse elu? Kui üllad sõja õigustused on vaid kattevari ahnusele ja egoismile? Kuidas me elame valikutega, mida teeme?
-            <br />
-            <br />
-            Euripides kirjutas "Iphigéneia Aulises" oma elu lõpul, pärast seda, kui oli näinud aastakümneid kestnud sõdadeperioodi Kreekas – kui ta oli näinud võite, kaotusi ja hinda, mida inimesed pidid maksma. Kurb küll, kuid mis oli tõsi umbes 400 aastat eKr, on tõsi ka täna. Mõned probleemid, tundub, ei kao kunagi.
-            <br />
-            <br />
-            See on võimas näidend ja seda mitte ainult oma ajatu teema, vaid ka stiili poolest – Euripides julges liita tumeda komöödia inimlike valikute tragöödiaga ning psühholoogilise realismi koori füüsilise energiaga.
-            <br />
-            <br />
-            Põnev, traagiline, naljakas – see on meisterautori meistriteos. Säärane, mis tungib inimlike valikute südamikku.
-            <br />
-            <br />
-            Tegemist on esimese antud teksti lavastusega Eestis ja teksti tõlkis Anne Lill spetsiaalselt selle lavastuse jaoks, andes kaasaegsele vaatajale võimaluse kohtuda antiikmaailma kangelastega – Agamemnoni, Menelaose, Achilleuse ja Klytaimnestraga.
-            <br />
-            <br />
-            Euripides
-            <br />
-            Iphigéneia Aulises
-            <br />
-            Tõlkinud Anne Lill
-            <br />
-            <br />
-            Lavastaja ja lavakujundus Lorna Marshall
-            <br />
-            Lavastaja assistent Jüri Nael
-            <br />
-            <br />
-            Laval Tambet Tuisk, Rasmus Kaljujärv, Jaak Prints, Mirtel Pohla, Eva Klemets, Marika Vaarik, Risto Kübar ja Gert Raudsep
-            <br />
-            <br />
-            Lorna Marshall on nimekas briti lavastaja ja õppejõud, kelle erialaks nimetatakse "physical performance" – "füüsiline etendamine". Ta on töötanud koos sääraste Lääne teatri suurnimedega nagu Jacques LeCoq ja Etienne Decroux, samuti on ta lähedalt kursis erinevate jaapani teatri laadidega nagu no, kabuki ja butoh. Mitme lavastuse ja raamatu puhul on ta teinud koostööd Yoshi Oidaga, sh on ka eesti keeles ilmunud nende raamat "Nähtamatu näitleja" (2007). Marshall on ise avaldanud raamatu "Keha kõneleb" ("The Body Speaks").&nbsp;
-            <br />
-            Ta korraldab ka töötubasid üle kogu maailma. Eelmisel kevadel oli Marshall nädala koos Teater NO99 näitlejatega. Saavutati vastastikune hea klapp, mida otsustati jätkata Euripidese lavastamisega.
-        </p>
-        <p>
-            Euripidese teksti tõlkimist on toetanud Eesti Kultuurkapital. Aitäh!
-        </p>
+      ${production.content.raw()}
     </div>
     <a data-role="button" data-direction="reverse" data-rel="back" data-transition="fade" data-theme="c" href="#page1" data-icon="back" data-iconpos="left">
         Tagasi

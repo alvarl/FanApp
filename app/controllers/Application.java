@@ -33,9 +33,7 @@ public class Application extends Controller {
   }
 
   public static void index() {
-    SocialUser user = SecureSocial.getCurrentUser();
-    List<Event> events = Event.find("time > ? and event_id != 0 order by time asc", new Date()).fetch();
-    render(user, events);
+    render();
   }
 
   /**
@@ -72,14 +70,20 @@ public class Application extends Controller {
   }
 
   public static void patActor(int actorId, int rewardId, String description) {
-    Actor a = createActors().get(actorId);
-    Reward r = rewards.get(rewardId);
     try {
-      ActorPatting.register(getUser(), r.points, Messages.get("Saaja") + ": " + a.name + " / " + Messages.get("Teade") + ": " + description);
-      flash.success("Aitäh! ...hea meel");
+      Actor a = createActors().get(actorId);
+      Reward r = rewards.get(rewardId);
+      try {
+        ActorPatting.register(getUser(), r.points, Messages.get("Saaja") + ": " + a.name + " / " + Messages.get("Teade") + ": " + description);
+        flash.success("Aitäh! ...hea meel");
+      }
+      catch (OutOfPointsException e) {
+        flash.error("Pole piisavalt punkte!");
+      }
     }
-    catch (OutOfPointsException e) {
-      flash.error("Pole piisavalt punkte!");
+    catch (Exception e) {
+      flash.error("Tehniline probleem");
+      System.out.println(e);
     }
     flowers();
   }
@@ -95,11 +99,14 @@ public class Application extends Controller {
   }
 
   public static void kava() {
-    render();
+    SocialUser user = SecureSocial.getCurrentUser();
+    List<Event> events = Event.find("time > ? and event_id != 0 order by time asc", new Date()).fetch();
+    render(user, events);
   }
 
-  public static void kava_ext() {
-    render();
+  public static void kava_ext(long productionId) {
+    Production production = Production.findById(productionId);
+    render(production);
   }
 
   public static void points() {

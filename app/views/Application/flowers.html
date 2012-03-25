@@ -1,5 +1,6 @@
 #{extends 'main.html' /}
-<form action="@{Application.patActor()}" method="post">
+ #{set 'title'}Lilled#{/set}
+<form action="@{Application.patActor()}" data-ajax="false" method="post">
   <div data-role="content">
     <div>
       <b>
