@@ -55,6 +55,23 @@ body
     display: inline-block;
     zoom: 1;
     .display: inline;
+    position: relative;
+    overflow: hidden;
+    height: 39px;
+    width: 65px;
+}
+
+.logo .num-cont .num99
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.logo .num-cont .num-user
+{
+    position: absolute;
+    top: 50px;
+    left: 0;
 }
 
 span.date
