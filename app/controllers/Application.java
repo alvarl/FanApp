@@ -117,6 +117,10 @@ public class Application extends Controller {
     render();
   }
 
+  public static void support() {
+    render();
+  }
+
   public static void flowers() {
     Map<Integer, Reward> rewards = Application.rewards;
 
@@ -134,11 +138,11 @@ public class Application extends Controller {
     actors.put(4,new Actor("Mirtel Pohla"));
     actors.put(5,new Actor("Jaak Prints"));
     actors.put(6,new Actor("Gert Raudsepp"));
-    actors.put(11,new Actor("Stig Rästa"));
-    actors.put(7,new Actor("Inga Salurand"));
-    actors.put(8,new Actor("Tambet Tuisk"));
-    actors.put(9,new Actor("Marika Vaarik"));
-    actors.put(10,new Actor("Sergo Vares"));
+    actors.put(7,new Actor("Stig Rästa"));
+    actors.put(8,new Actor("Inga Salurand"));
+    actors.put(9,new Actor("Tambet Tuisk"));
+    actors.put(10,new Actor("Marika Vaarik"));
+    actors.put(11,new Actor("Sergo Vares"));
     return actors;
   }
 }
