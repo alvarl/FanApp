@@ -90,6 +90,11 @@ span.date
     padding-right: 13px;
 }
 
+.span12.columns
+{
+    padding: 10px 20px;
+}
+
 .ui-bar-a {
 	border: 1px solid 		#2A2A2A /*{a-bar-border}*/;
 	background: 			#111111 /*{a-bar-background-color}*/;
