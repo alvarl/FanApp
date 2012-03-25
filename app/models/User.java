@@ -15,7 +15,8 @@ public class User extends Model {
 
   @OneToMany
   @JoinColumn(name = "user_id")
-  public List<TicketPurchase> ticketPurchases;
+  @MapKeyColumn(name = "web_show_id")
+  public Map<Long, TicketPurchase> ticketPurchases;
 
   @OneToMany
   @JoinColumn(name = "user_id")
@@ -23,15 +24,22 @@ public class User extends Model {
   public Map<Long, EventRating> ratings;
 
   public User() {
-
   }
 
   public Map<Long, EventRating> getRatings() {
     return ratings;
   }
 
+  public Map<Long, TicketPurchase> getTicketPurchases() {
+    return ticketPurchases;
+  }
+
   public EventRatings getRatingFor(Long productionId) {
     EventRating eventRating = getRatings().get(productionId);
     return eventRating == null ? null : eventRating.rating;
+  }
+
+  public TicketPurchase getTicketFor(Long eventId) {
+    return getTicketPurchases().get(eventId);
   }
 }

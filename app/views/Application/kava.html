@@ -5,7 +5,7 @@
     <ul data-role="listview" data-divider-theme="a" data-inset="false">
         #{list items:events, as:'event'}
         <li data-theme="c">
-            <a href="@{Application.kava_ext(event.production.id)}" data-transition="slide">
+            <a href="@{Application.kava_ext(event.id)}" data-transition="slide">
               #{set tickets: event.remainingFanTickets /}
               <span class="date">${event.time.format('dd.MM.yy HH:mm')}</span> NO${event.production.noNumber} ${event.niceTitle} #{if tickets > 0}(${tickets} &{'fännipiletit'})#{/if}
             </a>

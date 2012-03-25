@@ -24,9 +24,13 @@ public class TicketPurchase extends Model {
     this.count = count;
   }
 
-  public static void register(Event event, User user, int count) throws OutOfTicketsException, OutOfPointsException {
-    PointTransaction.register(user, new BigDecimal(event.ticketPrice).intValue(), Messages.get("piletiost") + " " + event.toDisplayString());
+  public static TicketPurchase register(Event event, User user, int count) throws OutOfTicketsException, OutOfPointsException {
+    BigDecimal price = new BigDecimal(event.getTicketPrice());
+    String description = Messages.get("piletiost") + " " + event.toDisplayString();
+    PointTransaction.register(user, price.intValue(), description);
     EventTickets.decreaseCountForEvent(event, count);
-    new TicketPurchase(event, user, count).save();
+    TicketPurchase ticketPurchase = new TicketPurchase(event, user, count);
+    ticketPurchase.save();
+    return ticketPurchase;
   }
 }

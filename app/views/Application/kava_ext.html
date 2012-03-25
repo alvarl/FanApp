@@ -19,9 +19,23 @@
 
     </fieldset>
   </div>
-  <a data-role="button" data-transition="fade" data-theme="a" href="#page1" data-icon="arrow-r" data-iconpos="right">
-    Osta pilet
-  </a>
+
+  #{set ticket: fanUser.getTicketFor(event.id) /}
+  #{if !ticket}
+    #{if event.getTicketPrice() != null && fanUser.points > event.getTicketPrice()}
+      <a id="buyTicket" data-role="button" data-transition="fade" data-theme="a" href="javascript:void(0)" onclick="buyTicket(${event.id})" data-icon="arrow-r" data-iconpos="right">
+        Osta pilet (${event.getTicketPrice()} punkti)
+      </a>
+    #{/if}
+    #{else}
+      <span data-role="button">Pilet maksab ${event.getTicketPrice()} punkti. Sul ei ole piisavalt punkte!</span>
+    #{/else}
+  #{/if}
+
+
+  <div id="yourTicket">
+    #{include './ticket.html'/}
+  </div>
 
   <h3>
     ${production.title}
@@ -33,10 +47,21 @@
   <a data-role="button" data-direction="reverse" data-rel="back" data-transition="fade" data-theme="c" href="#page1" data-icon="back" data-iconpos="left">
     Tagasi
   </a>
+
 </div>
 
 <script type="text/javascript">
-
+  function buyTicket(eventId) {
+    $.post('@{Application.buyTicket()}', { eventId: eventId },
+      function(html, st, jq){
+        if("success" == st) {
+          console.debug(html);
+          $('#yourTicket').html(html);
+          console.debug('set html');
+          $('#buyTicket').hide();
+        }
+    });
+   }
 
   function rateProduction(productionId, rating) {
     $.get('@{Application.rateProduction()}', {productionId: productionId, rating: rating}, function(html,sd,jq) {

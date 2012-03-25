@@ -58,15 +58,16 @@ public class Application extends Controller {
   public static void buyTicket(Long eventId, Integer count) {
     Event event = Event.findById(eventId);
     try {
-      TicketPurchase.register(event, getUser(), count == null ? 1 : count);
+      TicketPurchase ticket = TicketPurchase.register(event, getUser(), count == null ? 1 : count);
+      renderTemplate("Application/ticket.html", ticket);
     }
     catch (OutOfTicketsException e) {
-      error(Messages.get("Pole piisavalt pileteid!"));
+      error(400, Messages.get("Pole piisavalt pileteid!"));
     }
     catch (OutOfPointsException e) {
-      error(Messages.get("Pole piisavalt punkte!"));
+      error(400, Messages.get("Pole piisavalt punkte!"));
     }
-    renderText("");
+    error(500, "Pileti ostmine ebaõnnestus");
   }
 
   public static void patActor(int actorId, int rewardId, String description) {
@@ -108,9 +109,10 @@ public class Application extends Controller {
     render(user, events);
   }
 
-  public static void kava_ext(long productionId) {
-    Production production = Production.findById(productionId);
-    render(production);
+  public static void kava_ext(long eventId) {
+    Event event = Event.findById(eventId);
+    Production production = event.production;
+    render(event, production);
   }
 
   public static void account() {
@@ -119,10 +121,7 @@ public class Application extends Controller {
 
   public static void flowers() {
     Map<Integer, Reward> rewards = Application.rewards;
-
-
     Map<Integer, Actor> actors = createActors();
-
     render(rewards,actors);
   }
 

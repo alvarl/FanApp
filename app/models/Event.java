@@ -3,6 +3,7 @@ package models;
 import play.db.jpa.*;
 
 import javax.persistence.*;
+import java.math.*;
 import java.text.*;
 import java.util.*;
 
@@ -52,5 +53,14 @@ public class Event extends GenericModel {
 
   public String getNiceTitle() {
     return isBlank(title) ? production.getTitle() : title;
+  }
+
+
+  public Integer getTicketPrice() {
+    try {
+      return new BigDecimal(ticketPrice).intValue();
+    } catch (NumberFormatException e) {
+      return null;
+    }
   }
 }
