@@ -13,6 +13,9 @@ public class User extends Model {
   public String phone;
   public int points;
 
+  @Column(name = "offers_allowed")
+  public boolean offersAllowed;
+
   @OneToMany
   @JoinColumn(name = "user_id")
   @MapKeyColumn(name = "web_show_id")
