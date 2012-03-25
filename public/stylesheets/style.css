@@ -101,6 +101,10 @@ span.date
 {
     display: block;
     padding: 10px;
+    background: #cabbb9;
+    margin: 10px;
+    border: 1px dashed #6d6261;
+    font-size: 13px;
 }
 
 .ui-bar-a {
