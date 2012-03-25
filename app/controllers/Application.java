@@ -11,6 +11,18 @@ import java.util.*;
 @With(SecureSocial.class)
 public class Application extends Controller {
 
+  // List of rewards for flowers
+  public static Map<Integer,Reward> rewards = new HashMap<Integer, Reward>();
+
+  static {
+    rewards.put(1, new Reward("Üks lill", 5));
+    rewards.put(2, new Reward("Uhke lillekimp", 15));
+    rewards.put(3, new Reward("Üks õlu", 5));
+    rewards.put(4, new Reward("Korralik pudel konjakit", 15));
+  }
+
+
+
   public static User getUser() {
     return (User)renderArgs.get("fanUser");
   }
@@ -60,13 +72,17 @@ public class Application extends Controller {
     renderText("");
   }
 
-  public static void patActor(int points, String actor, String description) {
+  public static void patActor(int actorId, int rewardId, String description) {
+    Actor a = createActors().get(actorId);
+    Reward r = rewards.get(rewardId);
     try {
-      ActorPatting.register(getUser(), points, description + " [" + Messages.get("Saaja") + ": " + actor + "]");
+      ActorPatting.register(getUser(), r.points, Messages.get("Saaja") + ": " + a.name + " / " + Messages.get("Teade") + ": " + description);
+      flash.success("Aitäh! ...hea meel");
     }
     catch (OutOfPointsException e) {
-      error(Messages.get("Pole piisavalt punkte!"));
+      flash.error("Pole piisavalt punkte!");
     }
+    flowers();
   }
 
   public static void supportTheatre() {
@@ -92,6 +108,22 @@ public class Application extends Controller {
   }
 
   public static void flowers() {
-    render();
+    Map<Integer, Reward> rewards = Application.rewards;
+
+
+    Map<Integer, Actor> actors = createActors();
+
+    render(rewards,actors);
+  }
+
+  private static Map<Integer, Actor> createActors() {
+    Map<Integer, Actor> actors = new HashMap<Integer, Actor>();
+    actors.put(1,new Actor("Rasmus Kaljujärv"));
+    actors.put(2,new Actor("Eve Klements"));
+    actors.put(3,new Actor("Risto Kübar"));
+    actors.put(4,new Actor("Mirtel Pohla"));
+    actors.put(5,new Actor("Jaak Prints"));
+    actors.put(6,new Actor("Gert Raudsepp"));
+    return actors;
   }
 }
