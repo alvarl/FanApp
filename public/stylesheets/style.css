@@ -57,6 +57,12 @@ body
     .display: inline;
 }
 
+span.date
+{
+    font-size: 0.85em;
+    padding-right: 13px;
+}
+
 .ui-bar-a {
 	border: 1px solid 		#2A2A2A /*{a-bar-border}*/;
 	background: 			#111111 /*{a-bar-background-color}*/;
@@ -1200,7 +1206,7 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-mobile .ui-page-active { display: block; overflow: visible; }
 
 /* on ios4, setting focus on the page element causes flashing during transitions when there is an outline, so we turn off outlines */
-.ui-page { outline: none; }
+.ui-page { outline: none; display: none; }
 
 /*orientations from js are available */
 @media screen and (orientation: portrait){
