@@ -9,7 +9,7 @@
     </div>
     <div data-role="fieldcontain">
       <label for="selectmenu2">
-        Keda kiidad:
+        Kellele saadad lilled:
       </label>
       <select data-native-menu="false" name="actorId" required id="selectmenu2" data-theme="c">
         #{list items:actors, as: 'actor'}
@@ -27,7 +27,7 @@
         #{list items:rewards, as: 'r'}
         <input name="rewardId" id="radio${r.key}" value="${r.key}" type="radio"/>
         <label for="radio${r.key}">
-          ${r.value.name} (${r.value.points}p)
+          ${r.value.name} (${r.value.points} punkti)
         </label>
         #{/list}
 
@@ -36,7 +36,7 @@
     <div data-role="fieldcontain">
       <fieldset data-role="controlgroup">
         <label for="textarea1">
-          Kuidas meeldis:
+          Sõnum näitlejale:
         </label>
         <textarea id="textarea1" maxlength="500" name="description" placeholder="Kirjuta siia, mis sulle etenduse/näitleja juures meeldis">
         </textarea>
