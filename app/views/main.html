@@ -30,7 +30,7 @@
             <div class="num-cont">
                 <div class="num99">99</div>
                 #{if fanUser}
-                   <div class="num-user">${fanUser.points.format('#00')}</div>
+                   <div class="num-user" id="current-points">${fanUser.points.format('#00')}</div>
                    <script type="text/javascript">$(document).ready(function(){setTimeout("slideNum99();", 3000);});</script>
                 #{/if}
             </div>
