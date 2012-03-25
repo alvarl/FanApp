@@ -26,11 +26,21 @@ body
 
 .logo
 {
-	width: 100%;
 	background: #a19694;
 	height: 45px;
 	text-align: center;
 	padding: 15px;
+	position: relative;
+}
+
+.beta
+{
+     width: 57px;
+     height: 36px;
+     background: url('../images/beta.png') no-repeat;
+     position: absolute;
+     top: 0;
+     right: 0;
 }
 
 .logo div

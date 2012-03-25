@@ -12,10 +12,6 @@
 </script>
 
 <div class="span12 columns">
-    <div class="page-header">
-        <h1>&{'securesocial.login'}</h1>
-    </div>
-
     #{if flash.error}
     <div class="alert-message block-message error">
         <div class="alert-actions">
@@ -25,7 +21,8 @@
     #{/if}
 
     <div class="clearfix">
-        <p>&{'securesocial.clickOnYourAccount'}</p>
+        <p><strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,</strong>
+            sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
 
         <p>
             #{list items: providers, as: 'provider'}
