@@ -8,17 +8,6 @@
     <img src="http://no99.ee/gfx/png/nimi.php?image_path=${production.imageName}"/>
   </div>
   #{/if}
-  <div data-role="fieldcontain">
-    <fieldset data-role="controlgroup" data-type="horizontal">
-      <legend>
-      </legend>
-      <input type="radio" name="rating" id="WANT_TO_SEE" value="WANT_TO_SEE" #{if fanUser.getRatingFor(production.id) == models.EventRatings.WANT_TO_SEE}checked="checked"#{/if}/>
-      <label for="WANT_TO_SEE">Tahan näha</label>
-      <input type="radio" name="rating" id="LIKED" value="LIKED" #{if fanUser.getRatingFor(production.id) == models.EventRatings.LIKED}checked="checked"#{/if}/>
-      <label for="LIKED">Meeldis</label>
-
-    </fieldset>
-  </div>
 
   #{set ticket: fanUser.getTicketFor(event.id) /}
   #{if !ticket}
@@ -31,6 +20,18 @@
       <span data-role="button">Pilet maksab ${event.getTicketPrice()} punkti. Sul ei ole piisavalt punkte!</span>
     #{/else}
   #{/if}
+    <span class="date">&nbsp;${event.time.format('dd.MM.yy HH:mm')}</span>
+    <div data-role="fieldcontain">
+        <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>
+            </legend>
+            <input type="radio" name="rating" id="WANT_TO_SEE" value="WANT_TO_SEE" #{if fanUser.getRatingFor(production.id) == models.EventRatings.WANT_TO_SEE}checked="checked"#{/if}/>
+            <label for="WANT_TO_SEE">Tahan näha</label>
+            <input type="radio" name="rating" id="LIKED" value="LIKED" #{if fanUser.getRatingFor(production.id) == models.EventRatings.LIKED}checked="checked"#{/if}/>
+            <label for="LIKED">Meeldis</label>
+
+        </fieldset>
+    </div>
 
 
   <div id="yourTicket">
