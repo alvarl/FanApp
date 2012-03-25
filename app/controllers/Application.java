@@ -2,6 +2,7 @@ package controllers;
 
 import controllers.securesocial.*;
 import models.*;
+import play.data.validation.*;
 import play.i18n.*;
 import play.mvc.*;
 import securesocial.provider.*;
@@ -109,10 +110,14 @@ public class Application extends Controller {
     render(user, events);
   }
 
-  public static void kava_ext(long eventId) {
-    Event event = Event.findById(eventId);
-    Production production = event.production;
-    render(event, production);
+  public static void kava_ext(@Required Long eventId) {
+    if(!Validation.hasErrors()) {
+      Event event = Event.findById(eventId);
+      Production production = event.production;
+      render(event, production);
+    } else {
+      error(400,"Invalid ID");
+    }
   }
 
   public static void account() {
