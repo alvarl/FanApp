@@ -1,67 +1,46 @@
 #{extends 'main.html' /}
-
-<div data-role="content">
+<form action="@{Application.patActor()}" method="post">
+  <div data-role="content">
     <div>
-        <b>
-            Enter content here...
-        </b>
+      <b>
+        Enter content here...
+      </b>
     </div>
     <div data-role="fieldcontain">
-        <label for="selectmenu2">
-            Keda kiidad:
+      <label for="selectmenu2">
+        Keda kiidad:
+      </label>
+      <select data-native-menu="false" name="actorId" required id="selectmenu2" data-theme="c">
+        #{list items:actors, as: 'actor'}
+          <option value="${actor.key}">${actor.value.name}</option>
+        #{/list}
+      </select>
+
+    </div>
+    <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup" data-type="vertical">
+        <legend>
+          Mida saadad:
+        </legend>
+
+        #{list items:rewards, as: 'r'}
+        <input name="rewardId" id="radio${r.key}" value="${r.key}" type="radio"/>
+        <label for="radio${r.key}">
+          ${r.value.name} (${r.value.points}p)
         </label>
-        <select data-native-menu="false" name="selectmenu2" id="selectmenu2" data-theme="c">
-            <option value="option1">
-                Rasmus Kaljujärv
-            </option>
-            <option value="">
-                Eva Klemets
-            </option>
-            <option value="">
-                Risto Kübar
-            </option>
-            <option value="">
-                Mirtel Pohla
-            </option>
-            <option value="">
-                Jaak Prints
-            </option>
-            <option value="">
-                Gert Raudsep
-            </option>
-        </select>
+        #{/list}
+
+      </fieldset>
     </div>
     <div data-role="fieldcontain">
-        <fieldset data-role="controlgroup" data-type="vertical">
-            <legend>
-                Mida saadad:
-            </legend>
-            <input name="radiobuttons2" id="radio2" value="radio1" type="radio" />
-            <label for="radio2">
-                Üks lill (5p)
-            </label>
-            <input name="radiobuttons2" id="radio3" value="radio3" type="radio" />
-            <label for="radio3">
-                Uhke lillekimp (15p)
-            </label>
-            <input name="radiobuttons2" id="radio4" value="radio4" type="radio" />
-            <label for="radio4">
-                Üks õlu (5p)
-            </label>
-            <input name="radiobuttons2" id="radio5" value="radio5" type="radio" />
-            <label for="radio5">
-                Korralik pudel konjakit (15p)
-            </label>
-        </fieldset>
+      <fieldset data-role="controlgroup">
+        <label for="textarea1">
+          Kuidas meeldis:
+        </label>
+        <textarea id="textarea1" maxlength="500" name="description" placeholder="Kirjuta siia, mis sulle etenduse/näitleja juures meeldis">
+        </textarea>
+      </fieldset>
     </div>
-    <div data-role="fieldcontain">
-        <fieldset data-role="controlgroup">
-            <label for="textarea1">
-                Kuidas meeldis:
-            </label>
-            <textarea id="textarea1" placeholder="Kirjuta siia, mis sulle etenduse/näitleja juures meeldis">
-            </textarea>
-        </fieldset>
-    </div>
-    <input type="submit" data-theme="e" data-icon="arrow-r" data-iconpos="right" value="PANE TEELE!" />
-</div>
+    <input type="submit" data-theme="e" data-icon="arrow-r" data-iconpos="right" value="PANE TEELE!"/>
+  </div>
+</form>

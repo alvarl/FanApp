@@ -39,7 +39,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/flowers" data-theme="c" data-icon="" data-transition="flip">
+                    <a href="@{Application.flowers()}" data-theme="c" data-icon="" data-transition="flip">
                         Õlled / Lilled
                     </a>
                 </li>
@@ -51,6 +51,12 @@
             </ul>
         </div>
     </div>
+       #{if flash.contains('success')}
+        <span class="thankYou">${flash.get('success')}</span>
+      #{/if}
+      #{if flash.contains('error')}
+        <span class="error">${flash.get('error')}</span>
+      #{/if}
     #{doLayout /}
 </div>
 </body>
