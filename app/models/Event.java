@@ -51,6 +51,6 @@ public class Event extends GenericModel {
   }
 
   public String getNiceTitle() {
-    return isBlank(title) ? production.title : title;
+    return isBlank(title) ? production.getTitle() : title;
   }
 }

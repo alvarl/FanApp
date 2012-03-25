@@ -22,4 +22,10 @@ public class Production extends GenericModel {
   public Production() {
   }
 
+  // Todo Refactor
+  public String getTitle() {
+    return title.replaceAll("Ã¤","ä")
+      .replaceAll("Ãµ","õ")
+      .replaceAll("Ã©","é");
+  }
 }
