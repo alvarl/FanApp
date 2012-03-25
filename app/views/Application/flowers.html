@@ -11,7 +11,8 @@
       <label for="selectmenu2">
         Kellele saadad lilled:
       </label>
-      <select data-native-menu="false" name="actorId" required id="selectmenu2" data-theme="c">
+      <select data-native-menu="false" name="actorId" required=true id="selectmenu2" data-theme="c">
+        <option>-- Vali näitleja --</option>
         #{list items:actors, as: 'actor'}
           <option value="${actor.key}">${actor.value.name}</option>
         #{/list}
@@ -25,7 +26,7 @@
         </legend>
 
         #{list items:rewards, as: 'r'}
-        <input name="rewardId" id="radio${r.key}" value="${r.key}" type="radio"/>
+        <input name="rewardId" id="radio${r.key}" value="${r.key}" type="radio" required/>
         <label for="radio${r.key}">
           ${r.value.name} (${r.value.points} punkti)
         </label>
