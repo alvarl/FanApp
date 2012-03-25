@@ -102,8 +102,28 @@ span.date
     padding: 10px;
     background: #cabbb9;
     margin: 10px;
-    border: 1px dashed #6d6261;
-    font-size: 13px;
+    display: block;
+}
+
+.nupp
+{
+    display: block;
+    width: 115px;
+    height: 115px;
+	-moz-border-radius: 67px;
+	-webkit-border-radius: 67px;
+	border-radius: 67px;
+	background: #000;
+	-moz-box-shadow: 0px 0px 12px 			rgba(0,0,0,.6);
+	-webkit-box-shadow: 0px 0px 12px 		rgba(0,0,0,.6);
+	box-shadow: 0px 0px 12px 				rgba(0,0,0,.6);
+	margin: 30px auto;
+	cursor: pointer;
+}
+
+.nupp:active
+{
+    background: #c00;
 }
 
 .ui-bar-a {
@@ -1040,7 +1060,7 @@ a.ui-link-inherit {
 }
 .ui-checkbox-on .ui-icon,
 .ui-radio-on .ui-icon {
-	background-color: #4596ce /*{global-active-background-color}*/; /* NOTE: this hex should match the active state color. It's repeated here for cascade */
+	background-color: #c00 /*{global-active-background-color}*/; /* NOTE: this hex should match the active state color. It's repeated here for cascade */
 }
 
 /* loading icon */
@@ -1748,7 +1768,7 @@ Built by David Kaneda and maintained by Jonathan Stark.
 */
 
 @media all and (min-width: 450px){
-	.ui-field-contain .ui-controlgroup-label { vertical-align: top; display: inline-block;  width: 20%;  margin: 0 2% 0 0;  }
+	.ui-field-contain .ui-controlgroup-label { vertical-align: top; display: inline-block;  /*width: 20%;*/  margin: 0 2% 0 0;  }
 	.ui-field-contain .ui-controlgroup-controls { display: inline-block; }
 	.ui-field-contain .ui-controlgroup .ui-select { width: 100%; } 
 	.ui-field-contain .ui-controlgroup-horizontal .ui-select { width: auto; }
@@ -1782,10 +1802,10 @@ Built by David Kaneda and maintained by Jonathan Stark.
 .ui-checkbox .ui-btn-icon-left .ui-icon, .ui-radio .ui-btn-icon-left .ui-icon {left: 15px; }
 .ui-checkbox .ui-btn-icon-right .ui-icon, .ui-radio .ui-btn-icon-right .ui-icon {right: 15px; }
 /* input, label positioning */
-.ui-checkbox input,.ui-radio input { position:absolute; left:20px; top:50%; width: 10px; height: 10px;  margin:-5px 0 0 0; outline: 0 !important; z-index: 1; }.ui-field-contain, fieldset.ui-field-contain { padding: 1.5em 0; margin: 0; border-width: 0 0 1px 0; overflow: visible; }
+.ui-checkbox input,.ui-radio input { position:absolute; left:20px; top:50%; width: 10px; height: 10px;  margin:-5px 0 0 0; outline: 0 !important; z-index: 1; }.ui-field-contain, fieldset.ui-field-contain { padding: 0.5em 0; margin: 0; border-width: 0 0 1px 0; overflow: visible; }
 .ui-field-contain:first-child { border-top-width: 0; }
 @media all and (min-width: 450px){
-	.ui-field-contain, .ui-mobile fieldset.ui-field-contain { border-width: 0; padding: 0; margin: 1em 0; }
+	.ui-field-contain, .ui-mobile fieldset.ui-field-contain { border-width: 0; padding: 0; margin: 0.3em 0; }
 }	.ui-select { display: block; position: relative; }
 .ui-select select { position: absolute; left: -9999px; top: -9999px; }
 .ui-select .ui-btn { overflow: hidden; }

@@ -1,26 +1,23 @@
 #{extends 'main.html' /}
 
 <div data-role="content">
-    <div data-role="fieldcontain">
-        <fieldset data-role="controlgroup" data-type="horizontal">
-            <legend>
-            </legend>
-            <input name="radiobuttons1" id="radio1" value="radio1" type="radio"/>
-            <label for="radio1" onclick="goToByScroll('points')">
-                Punktid
-            </label>
-            <input name="radiobuttons1" id="radio2" value="radio2" type="radio" />
-            <label for="radio2" onclick="goToByScroll('agreements')">
-                Nõusolekud
-            </label>
-            <input name="radiobuttons1" id="radio3" value="radio3" type="radio" />
-            <label for="radio3" onclick="goToByScroll('help')">
-                Abi
-            </label>
-        </fieldset>
-    </div>
-    <a id="points"></a>
-    <h3>Punktid</h3>
+    <h3>Nõusolekud</h3>
+    <form action="@{Application.patActor()}" data-ajax="false" method="post">
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup" data-type="vertical">
+                <legend>
+                </legend>
+                <input name="checkbox1" id="checkbox1" type="checkbox" />
+                <label for="checkbox1">
+                    Soovin Teater NO99 uudiskirju ja PUNKT99 piletipakkumisi.
+                </label>
+            </fieldset>
+        </div>
+        <input type="submit" data-theme="a" data-icon="arrow-r" data-iconpos="right" value="Salvesta"/>
+    </form>
+
+    <p><br><br></p>
+    <h3>Punktid / Abi</h3>
     <p>
         <strong>Sul on ${fanUser.points} punkti</strong>
     </p>
@@ -48,27 +45,9 @@
     <p>
         Küsimuste ja probleemide korral kirjuta piletid@no99.ee.
     </p>
-    <p><br><br></p>
-    <a id="agreements"></a>
-    <h3>Nõusolekud</h3>
-    <form action="@{Application.patActor()}" data-ajax="false" method="post">
-    <div data-role="fieldcontain">
-        <fieldset data-role="controlgroup" data-type="vertical">
-            <legend>
-            </legend>
-            <input name="checkbox1" id="checkbox1" type="checkbox" />
-            <label for="checkbox1">
-                Soovin Teater NO99 uudiskirju ja PUNKT99 piletipakkumisi.
-            </label>
-        </fieldset>
-    </div>
-    <input type="submit" data-theme="a" data-icon="arrow-r" data-iconpos="right" value="Salvesta"/>
-    </form>
-    <p><br><br></p>
-    <a id="help"></a>
-    <h3>Abi</h3>
     <p>
-
         Jälgi uudiseid! Arendame PUNKT99d pidevalt edasi! Lisandumas uusi võimalusi!
     </p>
+
+    <a data-role="button" data-transition="fade" data-theme="a" href="/auth/logout">Logi välja</a>
 </div>
