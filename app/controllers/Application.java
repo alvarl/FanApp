@@ -46,10 +46,10 @@ public class Application extends Controller {
     renderText("");
   }
 
-  public static void buyTicket(Long eventId) {
+  public static void buyTicket(Long eventId, Integer count) {
     Event event = Event.findById(eventId);
     try {
-      TicketPurchase.register(event, getUser(), 1);
+      TicketPurchase.register(event, getUser(), count == null ? 1 : count);
     }
     catch (OutOfTicketsException e) {
       error(Messages.get("Pole piisavalt pileteid!"));
