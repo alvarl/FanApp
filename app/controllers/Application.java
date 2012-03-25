@@ -113,7 +113,7 @@ public class Application extends Controller {
     render(production);
   }
 
-  public static void points() {
+  public static void account() {
     render();
   }
 
