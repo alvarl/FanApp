@@ -36,6 +36,7 @@
             </div>
             <div class="beta"></div>
         </div>
+        #{if fanUser}
         <div data-role="navbar" data-iconpos="top">
             <ul>
                 <li>
@@ -45,7 +46,7 @@
                 </li>
                 <li>
                     <a href="@{Application.flowers()}" data-theme="c" data-icon="" data-transition="flip">
-                        Õlled / Lilled
+                        Lilled
                     </a>
                 </li>
                 <li>
@@ -55,6 +56,7 @@
                 </li>
             </ul>
         </div>
+        #{/if}
     </div>
        #{if flash.contains('success')}
         <span class="thankYou">${flash.get('success')}</span>
