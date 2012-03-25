@@ -149,18 +149,19 @@ span.date
 	background: 			#333333 /*{a-bup-background-color}*/;
 	font-weight: bold;
 	color: 					#fff /*{a-bup-color}*/;
-	border-bottom: 3px solid #c00;
-	margin-bottom: -3px;
 }
 .ui-btn-up-a a.ui-link-inherit {
 	color: 					#fff /*{a-bup-color}*/;
 }
 .ui-btn.ui-btn-hover-a {
-	border-bottom: 3px solid #cc0000 /*{a-bhover-border}*/;
 	background: 			#444444 /*{a-bhover-background-color}*/;
 	font-weight: bold;
 	color: 					#fff /*{a-bhover-color}*/;
-	margin-bottom: -3px;
+}
+.ui-navbar-noicons .ui-btn.ui-btn-hover-a .ui-btn-inner, .ui-navbar-noicons .ui-btn.ui-btn-up-a .ui-btn-inner
+{
+	border-bottom: 3px solid #c00;
+	padding-bottom: 0.6em;
 }
 .ui-btn-hover-a a.ui-link-inherit {
 	color: 					#fff /*{a-bhover-color}*/;
@@ -377,14 +378,7 @@ span.date
 .ui-dialog.ui-overlay-c {
 	border: 1px solid 		#B3B3B3 /*{c-body-border}*/;
 	color: 					#000 /*{c-body-color}*/;
-	/*text-shadow: 0 1px 0  #fff ;*/
-	background: 			#f0f0f0 /*{c-body-background-color}*/;
-	background-image: -webkit-gradient(linear, left top, left bottom, from( #eee /*{c-body-background-start}*/), to( #ddd /*{c-body-background-end}*/)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient(#eee /*{c-body-background-start}*/, #ddd /*{c-body-background-end}*/); /* Chrome 10+, Saf5.1+ */
-	background-image:    -moz-linear-gradient(#eee /*{c-body-background-start}*/, #ddd /*{c-body-background-end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient(#eee /*{c-body-background-start}*/, #ddd /*{c-body-background-end}*/); /* IE10 */
-	background-image:      -o-linear-gradient(#eee /*{c-body-background-start}*/, #ddd /*{c-body-background-end}*/); /* Opera 11.10+ */
-	background-image:         linear-gradient(#eee /*{c-body-background-start}*/, #ddd /*{c-body-background-end}*/);
+	background: #9e9391;
 }
 .ui-body-c,
 .ui-body-c input,
@@ -434,12 +428,12 @@ span.date
 
 .ui-btn-hover-c {
 	border: 1px solid 		#bbbbbb /*{c-bhover-border}*/;
-	background: 			#dadada /*{c-bhover-background-color}*/;
+	background: 			#878080 /*{c-bhover-background-color}*/;
 	font-weight: bold;
 	color: 					#fff /*{c-bhover-color}*/;
 }
 .ui-btn-hover-c a.ui-link-inherit {
-	color: 					#2F3E46 /*{c-bhover-color}*/;
+	color: 					#000 /*{c-bhover-color}*/;
 }
 .ui-btn-down-c {
 	border: 1px solid 		#808080 /*{c-bdown-border}*/;
@@ -1618,6 +1612,7 @@ Built by David Kaneda and maintained by Jonathan Stark.
 .ui-navbar-expanded li .ui-btn .ui-btn-inner { min-height: 2.5em; }
 .ui-navbar-expanded .ui-navbar-noicons .ui-btn .ui-btn-inner { padding-top: 1.8em; padding-bottom: 1.9em; }
 .ui-btn { display: block; text-align: center; cursor:pointer;  position: relative; margin: .5em 5px; padding: 0; border-bottom-width: 0; }
+.ui-controlgroup-controls .ui-btn { border-bottom-width: 1px; }
 .ui-header .ui-btn, .ui-footer .ui-btn, .ui-bar .ui-btn { display: inline-block; font-size: 13px; }
 .ui-btn-inline { display: inline-block; }
 .ui-btn-inner { padding: .6em 25px; display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; position: relative; zoom: 1; }
