@@ -99,7 +99,6 @@ span.date
 
 .thankYou, .error
 {
-    display: block;
     padding: 10px;
     background: #cabbb9;
     margin: 10px;
@@ -201,7 +200,7 @@ span.date
 	font-weight: bold;
 	color: 					#fff /*{a-bhover-color}*/;
 }
-.ui-navbar-noicons .ui-btn.ui-btn-hover-a .ui-btn-inner, .ui-navbar-noicons .ui-btn.ui-btn-up-a .ui-btn-inner
+.ui-navbar-noicons .ui-btn.ui-btn-hover .ui-btn-inner, .ui-navbar-noicons .ui-btn.ui-btn-active .ui-btn-inner
 {
 	border-bottom: 5px solid #c00;
 	padding-bottom: 0.5em;
