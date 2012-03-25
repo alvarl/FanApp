@@ -28,6 +28,7 @@ public class FanUserService extends DefaultUserService implements UserService.Se
       User user = new User();
       user.email = socialUser.email;
       user.name = socialUser.displayName;
+      user.points = 99;
       user.save();
 
       userIdentity = new UserIdentity(new UserIdentity.UserIdentityKey(user.id, socialUser.id.provider), socialUser.id.id);
