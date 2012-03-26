@@ -1,53 +1,41 @@
 #{extends 'main.html' /}
 
 <div data-role="content">
-    <h3>Nõusolekud</h3>
-    <form action="@{Application.savePreferences()}" data-ajax="false" method="post">
-        <div data-role="fieldcontain">
-            <fieldset data-role="controlgroup" data-type="vertical">
-                <legend>
-                </legend>
-                <input name="offersAllowed" value="1" id="offersAllowed" type="checkbox" #{if fanUser.offersAllowed}checked="checked"#{/if}/>
-                <label for="offersAllowed">
-                    Soovin pakkumisi
-                </label>
-            </fieldset>
-        </div>
-        <input type="submit" data-theme="a" data-icon="arrow-r" data-iconpos="right" value="Salvesta"/>
-    </form>
+  <h3>Nõusolekud</h3>
+
+  <form action="@{Application.savePreferences()}" data-ajax="false" method="post">
+    <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup" data-type="vertical">
+        <legend>
+        </legend>
+        <input name="offersAllowed" value="1" id="offersAllowed" type="checkbox"
+               #{if fanUser.offersAllowed}checked="checked"#{/if}/>
+        <label for="offersAllowed">
+          Soovin pakkumisi
+        </label>
+      </fieldset>
+    </div>
+    <input type="submit" data-theme="a" data-icon="arrow-r" data-iconpos="right" value="Salvesta"/>
+  </form>
 
 
-    <h3>Punktid / Abi</h3>
-    <p>
-        <strong>Sul on ${fanUser.points} punkti</strong>
-    </p>
-    <p>
-        Olles PUNKT99 kasutaja, saad osta endale punkte. Punktide eest saad:
-    </p>
-    <p>
-        - osta pileteid meie etendustele<br>
-        - osta pileteid meie etendustele isegi siis, kui neid keegi teine enam osta ei saa. PUNKT99 kasutajatele hoiame aeg-ajalt teatud koguse pileteid ka siis, kui etendus on välja müüdud (seda juhtub sageli). Märgi ära, millisest lavastusest oled huvitatud, ning saadame Sulle teateid piletiostu võimaluse kohta ning soovi korral saad piletid välja osta. PUNKT99 kasutajatele mõeldud piletite broneerimine käib "kes ees, see mees" põhimõttel.<br>
-        - vaadata mängukava ja lavastuste tutvustusi.<br>
-        - saata lemmiknäitlejale lilli koos tervitussõnumiga. Laval tuuakse näitlejale elegantsed kunstlilled, Sinu ostetud punktide eest makstakse näitlejale aga preemiat. Kui lilled on saadetud hiljemalt 15 minutit enne etenduse lõppu, antakse lilled üle etenduse lõppedes. Kui hiljem, siis järgmise etenduse lõppedes.
+  <h3>Punktid / Abi</h3>
+  <p>
+    <strong>Sul on ${fanUser.points} punkti</strong>. 1 punkt maksab 1 euro.
+    <br/>NB! Need on punktid testimiseks. Päris ostu nende eest teha ei saa.
+  </p>
 
-    </p>
-    <p>
-        Liitudes saab kolm punkti tasuta. Punktide ostmisvõimaluste kohta saab pikemalt lugeda PUNKT99 leheküljel "konto" alt.
+  <p>Olles PUNKT99 kasutaja, saad osta endale punkte. Punktide eest saad:</p>
 
-    </p>
-    <p>
-        Punkte saab juurde osta teatri kassast (Sakala 3, Tallinn), helistades telefon 668 8792 või kirjutades piletid@no99.ee. Kui oled andnud meile teada soovitud punktide arvu, saadame Sulle arve. Arve tasumise järel kantakse punktid Sinu PUNKT99 kontole.
+  <ul>
+    <li>osta pileteid meie etendustele</li>
+    <li>osta pileteid meie etendustele isegi siis, kui neid keegi teine enam osta ei saa. PUNKT99 kasutajatele hoiame aeg-ajalt teatud koguse pileteid ka siis, kui etendus on välja müüdud (seda juhtub sageli). Märgi ära, millisest lavastusest oled huvitatud, ning saadame Sulle teateid piletiostu võimaluse kohta ning soovi korral saad piletid välja osta. PUNKT99 kasutajatele hoitud piletite broneerimine käib "kes ees, see mees" põhimõttel.</li>
+    <li>vaadata mängukava ja lavastuste tutvustusi</li>
+    <li>saata lemmiknäitlejale lilli koos tervitussõnumiga. Laval tuuakse näitlejale elegantsed kunstlilled, Sinu ostetud punktide eest makstakse näitlejale aga preemiat. Kui lilled on saadetud hiljemalt 15 minutit enne etenduse lõppu, antakse lilled üle etenduse lõppedes. Kui hiljem, siis järgmise etenduse lõppedes.</li>
+  </ul>
 
-    </p>
-    <p>
-        Üks punkt maksab 1 euro.
-    </p>
-    <p>
-        Küsimuste ja probleemide korral kirjuta piletid@no99.ee.
-    </p>
-    <p>
-        Jälgi uudiseid! Arendame PUNKT99d pidevalt edasi! Lisandumas uusi võimalusi!
-    </p>
+  <p>Küsimuste ja probleemide korral kirjuta <a href="mailto:piletid@no99.ee">piletid@no99.ee</a>.</p>
 
-    <a data-role="button" data-transition="fade" data-theme="a" href="/auth/logout">Logi välja</a>
+  <p><strong>Jälgi uudiseid! Arendame PUNKT99t edasi! Tagasiside demoversioonile on väga teretulnud - <a href="mailto:pirkko@no99.ee"/>pirkko@no99.ee</a>.</strong>
+  <a data-role="button" data-transition="fade" data-theme="a" href="/auth/logout">Logi välja</a>
 </div>
