@@ -138,14 +138,18 @@ public class Application extends Controller {
 
   private static Map<Integer, Actor> createActors() {
     Map<Integer, Actor> actors = new HashMap<Integer, Actor>();
-    actors.put(1,new Actor("Sean the singer"));
-    actors.put(2,new Actor("Dave the drummer"));
-    actors.put(3,new Actor("Kevin on keyboards"));
-    actors.put(4,new Actor("Bill the bassist"));
-    actors.put(5,new Actor("Viola the backing vocals"));
+    actors.put(1,new Actor("Rasmus Kaljujärv"));
+    actors.put(2,new Actor("Eve Klemets"));
+    actors.put(3,new Actor("Risto Kübar"));
+    actors.put(4,new Actor("Mirtel Pohla"));
+    actors.put(5,new Actor("Jaak Prints"));
+    actors.put(6,new Actor("Gert Raudsepp"));
+    actors.put(7,new Actor("Inga Salurand"));
+    actors.put(8,new Actor("Tambet Tuisk"));
+    actors.put(9,new Actor("Marika Vaarik"));
+    actors.put(10,new Actor("Sergo Vares"));
     return actors;
   }
-
 
   public static void savePreferences(boolean offersAllowed) {
     User user = getUser();
