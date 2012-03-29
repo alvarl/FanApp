@@ -1,3 +1,7 @@
 conf/application.conf
 tmp/*
 out/*
+target/*
+*.iml
+*.idea
+/*.xml
