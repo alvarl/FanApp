@@ -9,9 +9,9 @@ import java.util.*;
 public class Production extends GenericModel {
   @Id @Column(name = "page_id")
   public Long id;
-  @Column(name = "d_title_est")
+  @Column(name = "d_title_eng")
   public String title;
-  @Column(name = "d_intro_est")
+  @Column(name = "d_intro_eng")
   public String intro;
   @OneToMany
   public List<Event> events;
@@ -22,7 +22,7 @@ public class Production extends GenericModel {
   @Column(name="photo")
   public String imageName;
 
-  @Column(name="d_content_est")
+  @Column(name="d_content_eng")
   public String content;
 
   public Production() {

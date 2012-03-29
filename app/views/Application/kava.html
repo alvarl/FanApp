@@ -1,5 +1,5 @@
 #{extends 'main.html' /}
-#{set 'title'}Kava#{/set}
+#{set 'title'}What's on?#{/set}
 
 <div data-role="content">
     <ul data-role="listview" data-divider-theme="a" data-inset="false">
@@ -7,7 +7,7 @@
         <li data-theme="c">
             <a href="@{Application.kava_ext(event.id)}" data-transition="slide">
               #{set tickets: event.remainingFanTickets /}
-              <span class="date">${event.time.format('dd.MM.yy HH:mm')}</span> NO${event.production.noNumber} ${event.niceTitle} #{if tickets > 0}(${tickets} &{'fännipiletit'})#{/if}
+              <span class="date">${event.time.format('dd.MM.yy HH:mm')}</span> NO${event.production.noNumber} ${event.niceTitle} #{if tickets > 0}(${tickets} &{'fan tickets'})#{/if}
             </a>
         </li>
         #{/list}

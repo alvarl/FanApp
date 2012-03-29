@@ -13,12 +13,12 @@
   #{if !ticket}
     #{if event.getTicketPrice() != null && fanUser.points > event.getTicketPrice()}
       <a id="buyTicket" data-role="button" data-transition="fade" data-theme="a" href="javascript:void(0)" onclick="buyTicket(${event.id}, ${event.getTicketPrice()})" data-icon="arrow-r" data-iconpos="right">
-        Osta pilet (${event.getTicketPrice()} punkti)
+        Buy a ticket (${event.getTicketPrice()} points)
       </a>
       <span class="date">&nbsp;${event.time.format('dd.MM.yy HH:mm')}</span>
     #{/if}
     #{else}
-      <span data-role="button">Pilet maksab ${event.getTicketPrice()} punkti. Sul ei ole piisavalt punkte!</span>
+      <span data-role="button">One ticket is ${event.getTicketPrice()} points. You don't have enough points!</span>
     #{/else}
   #{/if}
     <div data-role="fieldcontain">
@@ -26,9 +26,9 @@
             <legend>
             </legend>
             <input type="radio" name="rating" id="WANT_TO_SEE" value="WANT_TO_SEE" #{if fanUser.getRatingFor(production.id) == models.EventRatings.WANT_TO_SEE}checked="checked"#{/if}/>
-            <label for="WANT_TO_SEE">Tahan näha</label>
+            <label for="WANT_TO_SEE">Want to see</label>
             <input type="radio" name="rating" id="LIKED" value="LIKED" #{if fanUser.getRatingFor(production.id) == models.EventRatings.LIKED}checked="checked"#{/if}/>
-            <label for="LIKED">Meeldis</label>
+            <label for="LIKED">I liked it!</label>
 
         </fieldset>
     </div>

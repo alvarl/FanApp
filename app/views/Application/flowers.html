@@ -1,13 +1,13 @@
 #{extends 'main.html' /}
- #{set 'title'}Lilled#{/set}
+ #{set 'title'}Flowers#{/set}
 <form action="@{Application.patActor()}" data-ajax="false" method="post">
   <div data-role="content">
     <div>
-      Siit saab saata lemmiknäitlejale lilli koos tervitussõnumiga. Kui lilled on saadetud hiljemalt 15 minutit enne etenduse lõppu, antakse lilled üle etenduse lõppedes. Kui hiljem, siis järgmise etenduse lõppedes.
+      Send flowers to your favourite performer together with a greeting! Flowers sent 15 min before the end get delivered tonight, on stage!
     </div>
     <div data-role="fieldcontain">
       <select data-native-menu="false" name="actorId" required=true id="selectmenu2" data-theme="c">
-        <option>-- Vali näitleja --</option>
+        <option>-- Choose performer --</option>
         #{list items:actors, as: 'actor'}
           <option value="${actor.key}">${actor.value.name}</option>
         #{/list}
@@ -17,13 +17,13 @@
     <div data-role="fieldcontain">
       <fieldset data-role="controlgroup" data-type="vertical">
         <legend>
-          Mida saadad:
+          Make a choice:
         </legend>
 
         #{list items:rewards, as: 'r'}
         <input name="rewardId" id="radio${r.key}" value="${r.key}" type="radio" required/>
         <label for="radio${r.key}">
-          ${r.value.name} (${r.value.points} punkti)
+          ${r.value.name} (${r.value.points} points)
         </label>
         #{/list}
 
@@ -32,13 +32,13 @@
     <div data-role="fieldcontain">
       <fieldset data-role="controlgroup">
         <label for="textarea1">
-          Sõnum näitlejale:
+          Your greeting:
         </label>
         <textarea id="textarea1" maxlength="500" name="description"></textarea>
       </fieldset>
     </div>
-    <input type="submit" data-theme="a" data-icon="arrow-r" data-iconpos="right" value="Saada"/>
+    <input type="submit" data-theme="a" data-icon="arrow-r" data-iconpos="right" value="Send"/>
       <hr class="button-sep">
-      <a data-role="button" data-theme="c" href="@{Application.support()}">Toeta teatrit</a>
+      <a data-role="button" data-theme="c" href="@{Application.support()}">Support the theatre</a>
   </div>
 </form>

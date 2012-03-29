@@ -1,7 +1,7 @@
 #{extends 'main.html' /}
 
 <div data-role="content">
-  <h3>Nõusolekud</h3>
+  <h3>Settings</h3>
 
   <form action="@{Application.savePreferences()}" data-ajax="false" method="post">
     <div data-role="fieldcontain">
@@ -11,31 +11,30 @@
         <input name="offersAllowed" value="1" id="offersAllowed" type="checkbox"
                #{if fanUser.offersAllowed}checked="checked"#{/if}/>
         <label for="offersAllowed">
-          Soovin pakkumisi
+          Please send me new offers
         </label>
       </fieldset>
     </div>
-    <input type="submit" data-theme="a" data-icon="arrow-r" data-iconpos="right" value="Salvesta"/>
+    <input type="submit" data-theme="a" data-icon="arrow-r" data-iconpos="right" value="Save"/>
   </form>
 
 
-  <h3>Punktid / Abi</h3>
+  <h3>Points</h3>
   <p>
-    <strong>Sul on ${fanUser.points} punkti</strong>. 1 punkt maksab 1 euro.
-    <br/><strong>NB! Need on punktid testimiseks. Päris ostu nende eest teha ei saa.</strong>
+    <strong>You have ${fanUser.points} points</strong>. 1 point = 1 EUR
+    <br/><strong>These are dummy points! No real purchases yet!</strong>
   </p>
 
-  <p>Olles PUNKT99 kasutaja, saad osta endale punkte. Punktide eest saad:</p>
+  <p>Being a registered user, you get to:</p>
 
   <ul>
-    <li>osta pileteid meie etendustele</li>
-    <li>osta pileteid meie etendustele isegi siis, kui neid keegi teine enam osta ei saa. PUNKT99 kasutajatele hoiame aeg-ajalt teatud koguse pileteid ka siis, kui etendus on välja müüdud (seda juhtub sageli). Märgi ära, millisest lavastusest oled huvitatud, ning saadame Sulle teateid piletiostu võimaluse kohta ning soovi korral saad piletid välja osta. PUNKT99 kasutajatele hoitud piletite broneerimine käib "kes ees, see mees" põhimõttel.</li>
-    <li>vaadata mängukava ja lavastuste tutvustusi</li>
-    <li>saata lemmiknäitlejale lilli koos tervitussõnumiga. Kui lilled on saadetud hiljemalt 15 minutit enne etenduse lõppu, antakse lilled üle etenduse lõppedes. Kui hiljem, siis järgmise etenduse lõppedes.</li>
+    <li>buy tickets to our shows</li>
+    <li>buy tickets to our shows even when we're sold out - from time to time we keep a secret stash of tickets for users of our fan app</li>
+    <li>see the schedule and information on plays on your smartphone</li>
+    <li>send flowers to your favourite actor/actress. Flowers sent less than 15min before the end are delivered after the next show.</li>
   </ul>
 
-  <p>Küsimuste ja probleemide korral kirjuta <a href="mailto:piletid@no99.ee">piletid@no99.ee</a>.</p>
+  <p>In case of questions or issues <a href="mailto:nobody@ee.ee">email us</a>.</p>
 
-  <p><strong>Jälgi uudiseid!</strong> Arendame PUNKT99t edasi! Tagasiside demoversioonile on väga teretulnud - <a href="mailto:pirkko@no99.ee"/>pirkko@no99.ee</a>.
-  <a data-role="button" data-transition="fade" data-theme="a" href="/auth/logout">Logi välja</a>
+  <a data-role="button" data-transition="fade" data-theme="a" href="/auth/logout">Log out</a>
 </div>

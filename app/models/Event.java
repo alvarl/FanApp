@@ -13,9 +13,9 @@ import static org.apache.commons.lang.StringUtils.*;
 public class Event extends GenericModel {
   @Id @Column(name = "page_id")
   public Long id;
-  @Column(name = "d_title_est")
+  @Column(name = "d_title_eng")
   public String title;
-  @Column(name = "d_intro_est")
+  @Column(name = "d_intro_eng")
   public String intro;
   @ManyToOne @JoinColumn(name = "event_id")
   public Production production;

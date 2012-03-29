@@ -16,9 +16,9 @@ public class Application extends Controller {
   public static Map<Integer,Reward> rewards = new HashMap<Integer, Reward>();
 
   static {
-    rewards.put(1, new Reward("Väike lill", 5));
-    rewards.put(2, new Reward("Keskmine lill", 10));
-    rewards.put(3, new Reward("Suur lill", 15));
+    rewards.put(1, new Reward("Small flower", 5));
+    rewards.put(2, new Reward("Medium flower", 10));
+    rewards.put(3, new Reward("Large flower", 15));
   }
 
 
@@ -63,12 +63,12 @@ public class Application extends Controller {
       renderTemplate("Application/ticket.html", ticket);
     }
     catch (OutOfTicketsException e) {
-      error(400, Messages.get("Pole piisavalt pileteid!"));
+      error(400, Messages.get("Not enough tickets!"));
     }
     catch (OutOfPointsException e) {
-      error(400, Messages.get("Pole piisavalt punkte!"));
+      error(400, Messages.get("Not enough points!"));
     }
-    error(500, "Pileti ostmine ebaõnnestus");
+    error(500, "An error occurred while buying the ticket");
   }
 
   public static void patActor(int actorId, int rewardId, String description) {
@@ -76,19 +76,19 @@ public class Application extends Controller {
       Actor a = createActors().get(actorId);
       Reward r = rewards.get(rewardId);
       if(a == null || r == null) {
-        flash.error("Palun täida kõik väljad");
+        flash.error("Please fill all fields");
       } else {
         try {
           ActorPatting.register(getUser(), r.points, Messages.get("Saaja") + ": " + a.name + " / " + Messages.get("Teade") + ": " + description);
-          flash.success("Suur aitäh, lilled on saadetud!");
+          flash.success("Big thanks, the flowers have been sent!");
         }
         catch (OutOfPointsException e) {
-          flash.error("Pole piisavalt punkte!");
+          flash.error("Not enough points!");
         }
       }
     }
     catch (Exception e) {
-      flash.error("Tehniline probleem");
+      flash.error("Technical issue");
       System.out.println(e);
     }
     flowers();
@@ -96,10 +96,10 @@ public class Application extends Controller {
 
   public static void supportTheatre() {
     try {
-      PointTransaction.register(getUser(), 1, Messages.get("Teatri toetamine"));
+      PointTransaction.register(getUser(), 1, Messages.get("Support the theatre"));
     }
     catch (OutOfPointsException e) {
-      error(Messages.get("Pole piisavalt punkte!"));
+      error(Messages.get("Not enough points!"));
     }
     renderText("OK");
   }
@@ -138,16 +138,11 @@ public class Application extends Controller {
 
   private static Map<Integer, Actor> createActors() {
     Map<Integer, Actor> actors = new HashMap<Integer, Actor>();
-    actors.put(1,new Actor("Rasmus Kaljujärv"));
-    actors.put(2,new Actor("Eve Klemets"));
-    actors.put(3,new Actor("Risto Kübar"));
-    actors.put(4,new Actor("Mirtel Pohla"));
-    actors.put(5,new Actor("Jaak Prints"));
-    actors.put(6,new Actor("Gert Raudsepp"));
-    actors.put(7,new Actor("Inga Salurand"));
-    actors.put(8,new Actor("Tambet Tuisk"));
-    actors.put(9,new Actor("Marika Vaarik"));
-    actors.put(10,new Actor("Sergo Vares"));
+    actors.put(1,new Actor("Sean the singer"));
+    actors.put(2,new Actor("Dave the drummer"));
+    actors.put(3,new Actor("Kevin on keyboards"));
+    actors.put(4,new Actor("Bill the bassist"));
+    actors.put(5,new Actor("Viola the backing vocals"));
     return actors;
   }
 
@@ -167,7 +162,7 @@ public class Application extends Controller {
       error(400,"Cannot save");
       return;
     }
-    flash.success("Salvestatud!");
+    flash.success("Saved!");
     account();
   }
 }
