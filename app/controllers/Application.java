@@ -63,12 +63,12 @@ public class Application extends Controller {
       renderTemplate("Application/ticket.html", ticket);
     }
     catch (OutOfTicketsException e) {
-      error(400, Messages.get("Pole piisavalt pileteid!"));
+      error(400, Messages.get("ticket.soldout"));
     }
     catch (OutOfPointsException e) {
-      error(400, Messages.get("Pole piisavalt punkte!"));
+      error(400, Messages.get("point.notEnough"));
     }
-    error(500, "Pileti ostmine ebaõnnestus");
+    error(500, Messages.get("ticket.buyError"));
   }
 
   public static void patActor(int actorId, int rewardId, String description) {
@@ -76,19 +76,19 @@ public class Application extends Controller {
       Actor a = createActors().get(actorId);
       Reward r = rewards.get(rewardId);
       if(a == null || r == null) {
-        flash.error("Palun täida kõik väljad");
+        flash.error(Messages.get("validation.fillAll"));
       } else {
         try {
-          ActorPatting.register(getUser(), r.points, Messages.get("Saaja") + ": " + a.name + " / " + Messages.get("Teade") + ": " + description);
-          flash.success("Suur aitäh, lilled on saadetud!");
+          ActorPatting.register(getUser(), r.points, Messages.get("receiver") + ": " + a.name + " / " + Messages.get("message") + ": " + description);
+          flash.success(Messages.get("reward.thankYou"));
         }
         catch (OutOfPointsException e) {
-          flash.error("Pole piisavalt punkte!");
+          flash.error(Messages.get("point.notEnough"));
         }
       }
     }
     catch (Exception e) {
-      flash.error("Tehniline probleem");
+      flash.error(Messages.get("error"));
       System.out.println(e);
     }
     flowers();
@@ -99,7 +99,7 @@ public class Application extends Controller {
       PointTransaction.register(getUser(), 1, Messages.get("Teatri toetamine"));
     }
     catch (OutOfPointsException e) {
-      error(Messages.get("Pole piisavalt punkte!"));
+      error(Messages.get("point.notEnough"));
     }
     renderText("OK");
   }
@@ -167,7 +167,7 @@ public class Application extends Controller {
       error(400,"Cannot save");
       return;
     }
-    flash.success("Salvestatud!");
+    flash.success(Messages.get("saved"));
     account();
   }
 }

@@ -16,6 +16,7 @@ greetingAfterSignup=Meil on hea meel, et liitusid paljude teistega!
 validation.required=%s on kohustuslik
 validation.email=%s pole korrektne mailiaadress
 validation.object=Midagi läks viltu!
+validation.fillAll=Palun täida kõik väljad!
 
 since.seconds=%s sekund(it) tagasi
 since.minutes=%s minut(it) tagasi
@@ -29,3 +30,19 @@ calendar.dayNamesJS='Pühapäev', 'Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Nel
 calendar.dayNamesShortJS='P', 'E', 'T', 'K', 'N', 'R', 'L'
 calendar.monthNamesJS='Jaanuar', 'Veebruar', 'Märts', 'Aprill', 'Mai', 'Juuni', 'Juuli', 'August', 'September', 'Oktoober', 'November', 'Detsember'
 calendar.monthNamesShortJS='Jaan', 'Veebr', 'Märts', 'Apr', 'Mai', 'Juun', 'Juul', 'Aug', 'Sept', 'Okt', 'Nov', 'Dets'
+
+# General
+receiver=Saaja
+message=Teade
+error=Tehniline probleem
+saved=Salvestatud!
+
+# Rewards
+reward.thankYou=Suur aitäh, lilled on saadetud!
+
+# Tickets
+ticket.soldout=Kõik piletid on juba välja müüdud.
+ticket.buyError=Pileti ostmine ebaõnnestus!
+
+# Points
+point.notEnough=Pole piisavalt punkte!
