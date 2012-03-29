@@ -16,9 +16,9 @@ public class Application extends Controller {
   public static Map<Integer,Reward> rewards = new HashMap<Integer, Reward>();
 
   static {
-    rewards.put(1, new Reward("Small flower", 5));
-    rewards.put(2, new Reward("Medium flower", 10));
-    rewards.put(3, new Reward("Large flower", 15));
+    rewards.put(1, new Reward("Small bouquet", 5));
+    rewards.put(2, new Reward("Medium bouquet", 10));
+    rewards.put(3, new Reward("Large bouquet", 15));
   }
 
 
